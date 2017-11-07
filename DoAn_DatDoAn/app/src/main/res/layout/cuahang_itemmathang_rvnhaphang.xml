@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#fff"
+    android:elevation="1dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:gravity="center_vertical"
+        >
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/ivmathang_cuahang_rvnhaphang"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:id="@+id/tvtenmathang_cuahang_rvnhaphang"
+            android:layout_toRightOf="@id/ivmathang_cuahang_rvnhaphang"
+            android:text="aaaaaaa"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvmotamathang_cuhang_rvnhaphang"
+            android:layout_toRightOf="@id/ivmathang_cuahang_rvnhaphang"
+            android:layout_below="@id/tvtenmathang_cuahang_rvnhaphang"
+            android:textSize="10sp"
+            android:layout_alignLeft="@+id/tvtenmathang_cuahang_rvnhaphang"
+            android:textColor="#50000000"
+            android:text="aaaaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvgia_cuahang_rvnhaphang"
+            android:layout_alignLeft="@+id/tvtenmathang_cuahang_rvnhaphang"
+            android:layout_below="@id/tvmotamathang_cuhang_rvnhaphang"
+            android:textColor="#000"
+            android:layout_marginTop="10dp"
+            android:textSize="10sp"
+            android:text="aaaaaaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:background="#60140c0c"
+            android:layout_below="@+id/ivmathang_cuahang_rvnhaphang"
+            android:layout_width="match_parent"
+            android:layout_height="2px" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@drawable/corner_dialog"
+    android:elevation="1dp">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <RelativeLayout
+        android:padding="3dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/ivcuahang_cuahang_mathangfragment"
+            android:layout_width="match_parent"
+            android:layout_height="120dp" />
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/ivmathang_cuahang_mathangfragment"
+            android:layout_width="100dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="75dp"
+            />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tv1_cuahang_mathangfragment"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/ivmathang_cuahang_mathangfragment"
+            android:textColor="#000"
+            android:text="Tên"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/edtenmathang_cuahang_mathangfragment"
+            android:text="aaaaaaa"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@color/transparent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:inputType="textShortMessage"
+            android:layout_width="match_parent"
+            android:hint="Tên mặt hàng"
+            android:layout_alignTop="@+id/tv1_cuahang_mathangfragment"
+            android:layout_toRightOf="@+id/tv1_cuahang_mathangfragment"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edmotamathang_cuahang_mathangfragment" />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tv4_cuahang_mathangfragment"
+            android:layout_below="@+id/tv1_cuahang_mathangfragment"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="Loại hàng"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <AutoCompleteTextView
+            android:layout_toRightOf="@+id/tv4_cuahang_mathangfragment"
+            android:layout_alignBottom="@+id/tv4_cuahang_mathangfragment"
+            android:textSize="14sp"
+            android:textColor="#000"
+            android:id="@+id/autolh_cuahang_mathangfragment"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tv2_cuahang_mathangfragment"
+            android:layout_below="@+id/tv4_cuahang_mathangfragment"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:text="Mô tả"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_toRightOf="@+id/tv2_cuahang_mathangfragment"
+            android:layout_alignTop="@+id/tv2_cuahang_mathangfragment"
+            android:id="@+id/edmotamathang_cuahang_mathangfragment"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:background="@color/transparent"
+            android:textColor="#000"
+            android:text="aaaaa"
+            android:inputType="textShortMessage"
+            android:layout_width="match_parent"
+            android:hint="Mô tả mặt hàng"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tv3_cuahang_mathangfragment"
+            android:layout_below="@+id/tv2_cuahang_mathangfragment"
+            android:textColor="#000"
+            android:layout_marginTop="10dp"
+            android:text="Giá"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="number"
+            android:id="@+id/edgia_cuahang_mathangfragment"
+            android:layout_toRightOf="@+id/tv3_cuahang_mathangfragment"
+            android:layout_alignTop="@+id/tv3_cuahang_mathangfragment"
+            android:textColor="#000"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:textSize="18sp"
+            android:background="@color/transparent"
+            android:text="aaaaaaa"
+            android:hint="Giá"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:visibility="gone"
+            android:id="@+id/btntaomh_cuahang_mathangfragment"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            app:spinning_bar_width="4dp"
+            app:spinning_bar_color="#FFF"
+            app:spinning_bar_padding="6dp"
+            android:text="Tạo mặt hàng mới"
+            android:layout_below="@+id/edgia_cuahang_mathangfragment"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff" />
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:id="@+id/btncapnhapmh_cuahang_mathangfragment"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edgia_cuahang_mathangfragment"
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            app:spinning_bar_width="4dp"
+            app:spinning_bar_color="#FFF"
+            app:spinning_bar_padding="6dp"
+           android:text="Cập nhập mặt hàng" />
+
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:background="@color/colorPrimary"
+            android:textColor="#fff"
+            app:spinning_bar_width="4dp"
+            app:spinning_bar_color="#FFF"
+            app:spinning_bar_padding="6dp"
+            android:id="@+id/btnxoamh_cuahang_mathangfragment"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btncapnhapmh_cuahang_mathangfragment"
+            android:text="Xóa" />
+    </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <RelativeLayout
+        app:layout_anchor="@id/ivcuahang_cuahang_mathangfragment"
+        app:layout_anchorGravity="bottom|end"
+        android:id="@+id/rlcamera_cuahang_mathangfragment"
+        android:clickable="true"
+        android:layout_margin="10dp"
+        android:background="@drawable/corner_dialog_camera"
+        android:layout_width="60dp"
+        android:layout_height="40dp">
+        <ImageView
+            android:clickable="false"
+            android:background="@drawable/ic_photo_camera_white_24dp"
+            android:layout_centerInParent="true"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

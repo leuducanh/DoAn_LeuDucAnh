@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/rl_cuahang_loaihang"
+        android:background="@drawable/corner_timdiadiemkhac_button"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_below="@id/rl_cuahang_loaihang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+            android:text=""
+            android:layout_width="0dp"
+            android:layout_height="50dp" />
+
+    </LinearLayout>
+</RelativeLayout>

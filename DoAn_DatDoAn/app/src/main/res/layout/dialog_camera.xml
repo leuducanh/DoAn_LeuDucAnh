@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:background="#fff"
+    android:padding="30dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/lnchupanh_dialog"
+        android:background="@drawable/corner_dialog_camera"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Chụp ảnh"
+            android:layout_width="100dp"
+            android:layout_height="50dp" />
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_photo_camera_white_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lnthuvien_dialog"
+        android:background="@drawable/corner_dialog_camera"
+        android:orientation="horizontal"
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginLeft="20dp"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:text="Thư viện"
+            android:layout_width="100dp"
+            android:layout_height="50dp" />
+        <ImageView
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/ic_photo_size_select_actual_white_24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

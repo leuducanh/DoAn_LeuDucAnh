@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="5dp"
+    card_view:contentPadding="8dp"
+    >
+<RelativeLayout
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:id="@+id/iv1_itemrvpheduyet"
+        android:text="Tên người đặt: "
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvten_cuahang_item_rvpheduyet"
+        android:layout_marginStart="10dp"
+        android:layout_below="@id/iv1_itemrvpheduyet"
+        android:textColor="#70000000"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginStart="10dp"
+        android:textStyle="bold"
+        android:id="@+id/iv2_itemrvpheduyet"
+        android:layout_below="@+id/tvten_cuahang_item_rvpheduyet"
+        android:text="Địa chỉ: "
+        android:textColor="#000"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_marginStart="10dp"
+        android:id="@+id/tvdiachi_cuahang_item_rvpheduyet"
+        android:layout_below="@+id/iv2_itemrvpheduyet"
+        android:text=""
+        android:textColor="#70000000"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:textStyle="italic"
+        android:id="@+id/tvtrangthai_cuahang_itenrvpheduyet"
+        android:layout_below="@+id/tvdiachi_cuahang_item_rvpheduyet"
+        android:text="Đang chờ phê duyệt"
+        android:textColor="#2cff02"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</RelativeLayout>
+</android.support.v7.widget.CardView>

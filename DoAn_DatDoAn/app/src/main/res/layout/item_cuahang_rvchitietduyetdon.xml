@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="5dp"
+    card_view:contentPadding="3dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/ivmathang_cuahang_rvchitietduyetdon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            />
+
+        <TextView
+            android:id="@+id/tvtenmathang_cuahang_rvchitietpheduyet"
+            android:layout_toRightOf="@id/ivmathang_cuahang_rvchitietduyetdon"
+            android:text="aaaaaaa"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/tvgia_cuahang_rvchitietduyetdon"
+            android:layout_alignLeft="@+id/tvtenmathang_cuahang_rvchitietpheduyet"
+            android:textColor="#000"
+            android:layout_marginTop="20dp"
+            android:textSize="10sp"
+            android:text="aaaaaaa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/tvsoluong_cuahang_chitietduyetdonrv"
+            android:layout_marginBottom="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_below="@+id/tvgia_cuahang_rvchitietduyetdon"
+            android:layout_alignParentEnd="true"
+            android:textStyle="italic"
+            android:textSize="14sp"
+            android:text="so luong"
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

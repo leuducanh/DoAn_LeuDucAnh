@@ -1,0 +1,338 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff"
+    android:clickable="true"
+    tools:context="leu.doan_datdoan.fragment.cuahang.CuaHang_ChiTietPheDuyetFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsvmain_cuahang_chitietpheduyetfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <fragment
+                android:id="@+id/map_cuahang_chitietpheduyetfragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true" />
+
+            <ImageView
+                android:id="@+id/ivtran_cuahang_chitietpheduyetfragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl2_cuahang_chitietpheduyetfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/map_cuahang_chitietpheduyetfragment"
+                android:background="#fff"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp">
+
+                <ImageView
+                    android:id="@+id/ivreddot"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp"
+                    android:layout_below="@+id/tvtennguoidat_cuahang_chitietpheduyetfragment"
+                    android:background="@drawable/ic_brightness_1_red_24dp" />
+
+                <TextView
+                    android:id="@+id/tvtennguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="leu duc anh"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tvtennguoidat_cuahang_chitietpheduyetfragment"
+                    android:text="ĐẶT"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tvtencuahang_cuahang_chitietdonhangfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ivreddot"
+                    android:layout_below="@+id/tvtennguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_toRightOf="@+id/ivreddot"
+                    android:text="Cửa hàng nào đó"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+                <ImageView
+                    android:id="@+id/ivgreendot"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp"
+                    android:layout_alignLeft="@+id/ivreddot"
+                    android:layout_below="@id/ivreddot"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_brightness_1_green_24dp" />
+
+                <TextView
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/tvden_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/ivgreendot"
+                    android:layout_toRightOf="@+id/ivgreendot"
+                    android:text="ĐẾN"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp" />
+
+
+                <TextView
+                    android:id="@+id/tvdiachinguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tvtennguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_below="@+id/tvden_cuahang_chitietpheduyetfragment"
+                    android:text="Địa chỉ nào đó"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvline1_cuahang_xacnhandathang"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tvdiachinguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10sp"
+                    android:background="#3b000000" />
+
+
+                <TextView
+                    android:id="@+id/tvsdt_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/tvline1_cuahang_xacnhandathang"
+                    android:layout_below="@+id/tvline1_cuahang_xacnhandathang"
+                    android:layout_marginTop="30dp"
+                    android:text="Số điện thoại: "
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvsdtnguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tvsdt_cuahang_chitietpheduyetfragment"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_toRightOf="@+id/tvsdt_cuahang_chitietpheduyetfragment"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/ivgoidien_cuahang_chitietpheduyetfragment"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/tvsdtnguoidat_cuahang_chitietpheduyetfragment"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/ic_call_green_24dp" />
+
+            </RelativeLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nsv_cuahang_chitietpheduyetfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl2_cuahang_chitietpheduyetfragment"
+                android:layout_marginTop="20dp">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvhangdat_chitietpheduyetfragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </android.support.v4.widget.NestedScrollView>
+
+
+            <ScrollView
+                android:id="@+id/sv_cuahang_chitietpheduyetfragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/nsv_cuahang_chitietpheduyetfragment"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:isScrollContainer="false">
+
+                <TextView
+                    android:id="@+id/tvghichu_cuahang_chitietpheduyetfragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/border_edittext"
+                    android:gravity="left|top"
+                    android:hint="Ghi Chú"
+                    android:inputType="textAutoComplete|textMultiLine"
+                    android:paddingBottom="80dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    android:textColor="#000"
+                    android:textSize="14sp" />
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv1_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sv_cuahang_chitietpheduyetfragment"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Tiền hàng: "
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvtienhang_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv1_cuahang_chitietpheduyetfragment"
+                android:layout_toRightOf="@+id/tv1_cuahang_chitietpheduyetfragment"
+                android:text="12345"
+                android:textColor="#8a545252"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv2_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv1_cuahang_chitietpheduyetfragment"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Tiền ship: "
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvtienvanchuyen_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv2_cuahang_chitietpheduyetfragment"
+                android:layout_toRightOf="@+id/tv2_cuahang_chitietpheduyetfragment"
+                android:text="12345"
+                android:textColor="#8a545252"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tv3_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv2_cuahang_chitietpheduyetfragment"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Tổng tiền: "
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvtongtien_cuahang_chitietpheduyetfragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/tv3_cuahang_chitietpheduyetfragment"
+                android:layout_toRightOf="@+id/tv3_cuahang_chitietpheduyetfragment"
+                android:text="12345"
+                android:textColor="#8a545252"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvtongtien_cuahang_chitietpheduyetfragment"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnhuydon_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_button"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Hủy đơn hàng"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnpheduyet_cuahang_chitietpheduyetfragment"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_button"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Phê duyệt"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btn_tim_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_button"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Tìm ship"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnhuy_cuahang_chitietpheduyetfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_button"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Hủy ship"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+
+                <Button
+                    android:id="@+id/btnbatdaugiao_cuahang_chitietpheduyetfragment"
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/ripple_button"
+                    android:gravity="center"
+                    android:padding="20dp"
+                    android:text="Đã giao cho ship"
+                    android:textColor="#fff"
+                    android:textSize="14sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</RelativeLayout>

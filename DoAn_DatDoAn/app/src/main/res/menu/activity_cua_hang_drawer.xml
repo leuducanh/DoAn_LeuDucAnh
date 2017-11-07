@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_cuahang_trangchu"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Trang chủ" />
+        <item
+            android:id="@+id/nav_cuahang_thongtin"
+            android:icon="@drawable/ic_store_black_24dp"
+            android:title="Thông tin" />
+
+        <item
+            android:id="@+id/nav_cuahang_nhaphang"
+            android:icon="@drawable/ic_view_list_primary_24dp"
+            android:title="Nhập hàng" />
+
+        <item
+            android:id="@+id/nav_cuahang_thoat"
+            android:icon="@drawable/ic_sign_out_black_24dp"
+            android:title="Thoát" />
+    </group>
+
+</menu>

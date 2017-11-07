@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="leu.doan_datdoan.fragment.cuahang.CuaHang_PheDuyetFragment">
+
+    <TextView
+        android:paddingLeft="5dp"
+        android:textSize="14sp"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        android:id="@+id/tvsoluong_cuahang_pheduyetfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/tvsoluong_cuahang_pheduyetfragment"
+        android:id="@+id/rvpheduyet_cuahang_pheduyetfragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</RelativeLayout>
