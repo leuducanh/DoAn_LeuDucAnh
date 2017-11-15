@@ -1,10 +1,12 @@
 package leu.doan_datdoan.model;
 
+import java.io.Serializable;
+
 /**
  * Created by MyPC on 05/11/2017.
  */
 
-public class KhachHang {
+public class KhachHang implements Serializable{
 
     private int id;
     private String ten;
@@ -20,6 +22,11 @@ public class KhachHang {
         this.ten = ten;
         this.dienThoai = dienThoai;
     }
+
+    public int getId() {
+        return id;
+    }
+
     public String getTen() {
         return ten;
     }

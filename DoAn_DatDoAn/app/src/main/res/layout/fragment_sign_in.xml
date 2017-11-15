@@ -1,0 +1,256 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.SignUpSignInActivity">
+
+    <RelativeLayout
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+
+        <View
+            android:id="@+id/bg_bottom_"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#f2f2f2"/>
+
+        <View
+            android:id="@+id/hole_3_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignBottom="@+id/bg_bottom_"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp"/>
+
+        <View
+            android:id="@+id/hole_4_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignBottom="@+id/bg_bottom_"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/hole_3_"
+            android:layout_alignLeft="@+id/hole_3_"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp"/>
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/hole_4_"
+            android:layout_alignLeft="@+id/hole_4_"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="2dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp"/>
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/connect"
+        android:fillViewport="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:background="#f2f2f2"
+                android:id="@+id/tvfill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <LinearLayout
+                android:layout_below="@id/tvfill"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/rlsignin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:background="#f2f2f2"
+                    android:orientation="vertical"
+                    android:paddingTop="10dp">
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        android:text="abc"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/bg_stroke"
+                        android:drawableLeft="@drawable/ic_person_black_24dp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/username"
+                        android:paddingLeft="8dp"
+                        android:textColor="@color/text_color_primary"
+                        android:textColorHint="@color/text_color_seconds"
+                        android:textSize="@dimen/text_size"
+                        android:textStyle="normal"/>
+
+                    <EditText
+                        android:text="abc"
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_below="@id/et_username"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/bg_stroke"
+                        android:drawableLeft="@drawable/ic_lock_black_24dp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="8dp"
+                        android:textColor="@color/text_color_primary"
+                        android:textColorHint="@color/text_color_seconds"
+                        android:textSize="@dimen/text_size"/>
+
+                    <Button
+                        android:layout_below="@+id/et_password"
+                        android:id="@+id/btn_sign_in"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@color/colorPrimary"
+                        android:elevation="10dp"
+                        android:text="Đăng nhập"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/text_size_large"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:id="@+id/tv_forgotPassword"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/btn_sign_in"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginBottom="8dp"
+                        android:text="@string/forgot_password"
+                        android:textColor="@color/text_color_primary"
+                        android:textSize="@dimen/text_size_small"
+                        android:textStyle="italic"/>
+
+                    <View
+                        android:id="@+id/temp"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_alignBaseline="@+id/tv_forgotPassword"
+                        android:background="@color/transparent"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#00f2f2f2">
+
+                    <View
+                        android:id="@+id/bg_top"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:background="#f2f2f2"
+                        android:elevation="1dp"/>
+
+
+                    <View
+                        android:id="@+id/bg_bottom"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/bg_top"
+                        android:background="#f2f2f2"
+                        />
+
+                    <View
+                        android:id="@+id/hole_1"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/small_hole"
+                        android:elevation="1dp"/>
+
+                    <View
+                        android:id="@+id/hole_2"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/small_hole"
+                        android:elevation="1dp"/>
+
+                    <View
+                        android:id="@+id/hole_3"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_alignTop="@id/bg_bottom"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/small_hole"
+                        android:elevation="1dp"/>
+
+                    <View
+                        android:id="@+id/hole_4"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_alignTop="@id/bg_bottom"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/small_hole"
+                        android:elevation="1dp"/>
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/hole_3"
+                        android:layout_alignLeft="@+id/hole_1"
+                        android:layout_alignTop="@+id/hole_1"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#ebdbc3"
+                        android:elevation="1dp"/>
+
+                    <View
+                        android:layout_width="4dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/hole_4"
+                        android:layout_alignLeft="@+id/hole_2"
+                        android:layout_alignTop="@+id/hole_2"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="3dp"
+                        android:background="#ebdbc3"
+                        android:elevation="1dp"/>
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

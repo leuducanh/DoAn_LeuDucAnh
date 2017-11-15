@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.alimuzaffar.lib.pin.PinEntryEditText
+        android:id="@+id/edpin_pincodedialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:cursorVisible="false"
+        android:digits="1234567890"
+        android:inputType="text|numberDecimal"
+        android:maxLength="6"
+        android:textIsSelectable="false"
+        android:textSize="20sp"
+        app:pinBackgroundIsSquare="true"
+        app:pinLineColors="@color/colorPrimary"
+        app:pinLineStroke="2dp"
+        app:pinLineStrokeSelected="4dp"
+        app:pinTextBottomPadding="5dp" />
+
+    <TextView
+        android:id="@+id/btndialogguima_pincodedialog"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edpin_pincodedialog"
+        android:text="Gửi mã code"
+        android:textStyle="italic"
+        android:textColor="#0111f9"/>
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/btnkiemtra_pincodedialog"
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btndialogguima_pincodedialog"
+        android:background="@color/colorPrimary"
+        android:textColor="#fff"
+        app:spinning_bar_width="4dp"
+        app:spinning_bar_color="#FFF"
+        app:spinning_bar_padding="6dp"
+        android:text="Kiểm tra mã code" />
+
+
+
+</RelativeLayout>

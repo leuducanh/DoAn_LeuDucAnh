@@ -574,4 +574,5 @@ public class CuaHang_ThongTinCuaHangFragment extends Fragment{
         long elapsed = d2.getTime() - d1.getTime();
         return  elapsed;
     }
+
 }

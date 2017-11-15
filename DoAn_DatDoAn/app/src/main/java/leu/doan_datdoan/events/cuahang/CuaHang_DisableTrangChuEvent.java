@@ -1,4 +1,4 @@
-package leu.doan_datdoan.events;
+package leu.doan_datdoan.events.cuahang;
 
 /**
  * Created by MyPC on 30/10/2017.

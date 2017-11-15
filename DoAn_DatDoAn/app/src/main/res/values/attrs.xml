@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomFontTextView">
+        <attr name="fontName" format="string"/>
+    </declare-styleable>
+    <declare-styleable name="CustomFontEditText">
+        <attr name="fontNameEd" format="string"/>
+    </declare-styleable>
+</resources>

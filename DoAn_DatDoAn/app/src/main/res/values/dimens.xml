@@ -5,4 +5,24 @@
     <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+
+    <dimen name="text_size">15sp</dimen>
+    <dimen name="text_size_very_small">10sp</dimen>
+    <dimen name="text_size_small">13sp</dimen>
+    <dimen name="text_size_large">17sp</dimen>
+    <dimen name="text_size_big">20sp</dimen>
+    <dimen name="text_size_very_big">25sp</dimen>
+    <dimen name="vertical_margin">5dp</dimen>
+    <dimen name="para_margin_bottom_large">15dp</dimen>
+    <dimen name="para_margin_top_large">10dp</dimen>
+    <dimen name="para_margin_bottom_big">20dp</dimen>
+    <dimen name="para_margin_top_big">10dp</dimen>
+    <dimen name="para_margin_top">7dp</dimen>
+    <dimen name="para_margin_bottom">10dp</dimen>
+    <dimen name="para_margin_top_small">4dp</dimen>
+    <dimen name="para_margin_bottom_small">6dp</dimen>
+    <dimen name="para_margin_top_very_small">2dp</dimen>
+    <dimen name="para_margin_bottom_very_small">3dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
 </resources>

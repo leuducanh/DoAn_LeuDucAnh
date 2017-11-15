@@ -1,7 +1,10 @@
 package leu.doan_datdoan.fragment.cuahang;
 
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,10 +14,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import com.google.gson.Gson;
 
 import org.greenrobot.eventbus.EventBus;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -22,7 +27,7 @@ import butterknife.ButterKnife;
 import leu.doan_datdoan.R;
 import leu.doan_datdoan.activity.CuaHangActivity;
 import leu.doan_datdoan.adapters.cuahang.CuaHang_RvPheDuyetAdapter;
-import leu.doan_datdoan.events.CuaHang_OnClickChiTietPheDuyetMatHang;
+import leu.doan_datdoan.events.cuahang.CuaHang_OnClickChiTietPheDuyetMatHang;
 import leu.doan_datdoan.fragment.FragmentLifecycle;
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.model.DonHang;
@@ -31,7 +36,9 @@ import leu.doan_datdoan.model.DonHang;
  * A simple {@link Fragment} subclass.
  */
 public class CuaHang_PheDuyetFragment extends Fragment implements FragmentLifecycle,CuaHang_RvPheDuyetAdapter.OnItemRvPheDuyetClick{
+    private BroadcastReceiver broadcastReceiver;
 
+    public static final String CUAHANG_PHEDUYETBROADCAST = "pheđuyetdonhang";
     @BindView(R.id.rvpheduyet_cuahang_pheduyetfragment)
     RecyclerView recyclerView;
     @BindView(R.id.tvsoluong_cuahang_pheduyetfragment)
@@ -41,6 +48,7 @@ public class CuaHang_PheDuyetFragment extends Fragment implements FragmentLifecy
     private List<DonHang> donHangs;
     private Context context;
 
+    private List<Integer> lstId = new ArrayList<>();
     private CuaHang cuaHang;
     public void setContext(Context context) {
         this.context = context;
@@ -64,6 +72,23 @@ public class CuaHang_PheDuyetFragment extends Fragment implements FragmentLifecy
         cuaHang = (CuaHang) getArguments().getSerializable(CuaHangActivity.KEY_BUNDLE_CUAHANG);
         Log.d("abcd","abc " + cuaHang.getTen());
         setupUI(v);
+
+        broadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Gson g = new Gson();
+                String json  = intent.getStringExtra("donhang");
+                DonHang dh = g.fromJson(json,DonHang.class);
+                if(!lstId.contains(dh.getId())){
+                    lstId.add(dh.getId());
+                    donHangs.add(dh);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        };
+
+        context.registerReceiver(this.broadcastReceiver, new IntentFilter(CUAHANG_PHEDUYETBROADCAST));
+
         return v;
     }
 

@@ -9,21 +9,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.github.clans.fab.FloatingActionButton;
-import com.victor.loading.rotate.RotateLoading;
 
 import org.greenrobot.eventbus.EventBus;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,13 +26,11 @@ import butterknife.OnClick;
 import leu.doan_datdoan.R;
 import leu.doan_datdoan.activity.CuaHangActivity;
 import leu.doan_datdoan.adapters.cuahang.CuaHang_RvNhapHangAdapter;
-import leu.doan_datdoan.anim.MyBounceInterpolator;
-import leu.doan_datdoan.events.CuaHang_OnClickFabMatHang;
-import leu.doan_datdoan.events.CuaHang_OnClickMatHang;
+import leu.doan_datdoan.events.cuahang.CuaHang_OnClickFabMatHang;
+import leu.doan_datdoan.events.cuahang.CuaHang_OnClickMatHang;
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.model.LoaiHang;
 import leu.doan_datdoan.model.MatHang;
-import leu.doan_datdoan.network.LoadPicture;
 import leu.doan_datdoan.network.RetrofitFactory;
 import leu.doan_datdoan.network.cuahang.CuaHangService;
 import retrofit2.Call;

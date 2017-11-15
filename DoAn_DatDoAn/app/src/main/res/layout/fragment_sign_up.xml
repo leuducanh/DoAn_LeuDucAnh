@@ -1,0 +1,234 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    tools:context=".activity.SignUpSignInActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/connect"
+        android:layout_width="match_parent"
+        android:layout_height="20dp">
+
+        <View
+            android:id="@+id/bg_bottom_"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#f2f2f2" />
+
+        <View
+            android:id="@+id/hole_3_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp" />
+
+        <View
+            android:id="@+id/hole_4_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/hole_3_"
+            android:layout_alignLeft="@+id/hole_3_"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/hole_4_"
+            android:layout_alignLeft="@+id/hole_4_"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="5dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/connect"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:background="#f2f2f2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <co.ceryle.radiorealbutton.RadioRealButtonGroup
+                android:id="@+id/radigroup_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:elevation="1dp"
+                app:rrbg_animateDrawables_enter="overshoot"
+                app:rrbg_animateDrawables_enterDuration="500"
+                app:rrbg_animateDrawables_exit="overshoot"
+                app:rrbg_animateDrawables_exitDuration="500"
+                app:rrbg_animateDrawables_scale="1.2"
+                app:rrbg_animateTexts_enter="overshoot"
+                app:rrbg_animateTexts_enterDuration="500"
+                app:rrbg_backgroundColor="#FFF"
+                app:rrbg_borderColor="@color/black"
+                app:rrbg_borderSize="2dp"
+                app:rrbg_bottomLineColor="@color/colorPrimary"
+                app:rrbg_bottomLineRadius="2dp"
+                app:rrbg_bottomLineSize="0dp"
+                app:rrbg_buttonsPaddingTop="14dp"
+                app:rrbg_dividerColor="@color/black"
+                app:rrbg_dividerPadding="10dp"
+                app:rrbg_dividerRadius="1dp"
+                app:rrbg_dividerSize="2dp"
+                app:rrbg_radius="4dp"
+                app:rrbg_selectorAboveOfBottomLine="false"
+                app:rrbg_selectorColor="@color/black"
+                app:rrbg_selectorRadius="1dp"
+                app:rrbg_selectorSize="6dp"
+                app:rrbg_selectorTop="true">
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:rrb_drawable="@drawable/store"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawableHeight="40dp"
+                    app:rrb_drawableWidth="40dp"
+                    app:rrb_rippleColor="#bce47316"
+                    app:rrb_text="Cửa hàng"
+                    app:rrb_textColor="@color/black"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textTypefacePath="fonts/Lato-Black.ttf"/>
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:rrb_drawable="@drawable/customer"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawableHeight="40dp"
+                    app:rrb_drawableWidth="40dp"
+                    app:rrb_rippleColor="#a4733483"
+                    app:rrb_text="Khách hàng"
+                    app:rrb_textColor="@color/black"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textTypefacePath="fonts/Lato-Black.ttf"/>
+
+                <co.ceryle.radiorealbutton.RadioRealButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:rrb_drawable="@drawable/shipper"
+                    app:rrb_drawableGravity="top"
+                    app:rrb_drawableHeight="40dp"
+                    app:rrb_drawableWidth="40dp"
+                    app:rrb_rippleColor="#aa2b68a9"
+                    app:rrb_text="Shipper"
+                    app:rrb_textColor="@color/black"
+                    app:rrb_textSize="12sp"
+                    app:rrb_textTypefacePath="fonts/Lato-Black.ttf"/>
+            </co.ceryle.radiorealbutton.RadioRealButtonGroup>
+
+            <LinearLayout
+                android:layout_below="@+id/radigroup_signup"
+                android:layout_centerInParent="true"
+                android:id="@+id/main"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#f2f2f2"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/infor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:background="@drawable/bg_stroke"
+                    android:paddingBottom="1px"
+                    android:paddingTop="1px">
+
+                    <EditText
+                        android:id="@+id/et_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="1px"
+                        android:layout_marginRight="1px"
+                        android:background="@drawable/bg_white_no_corners"
+                        android:drawableLeft="@drawable/ic_person_black_24dp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/username"
+                        android:paddingLeft="8dp"
+                        android:textColor="@color/text_color_primary"
+                        android:textColorHint="@color/text_color_seconds"
+                        android:textSize="@dimen/text_size" />
+
+
+                    <View
+                        android:id="@+id/para"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_below="@+id/et_username"
+                        android:background="@color/text_color_seconds" />
+
+                    <EditText
+                        android:id="@+id/et_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/para"
+                        android:layout_marginLeft="1px"
+                        android:layout_marginRight="1px"
+                        android:background="@drawable/bg_white_no_corners"
+                        android:drawableLeft="@drawable/ic_lock_black_24dp"
+                        android:gravity="center_vertical"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:paddingLeft="8dp"
+                        android:textColor="@color/text_color_primary"
+                        android:textColorHint="@color/text_color_seconds"
+                        android:textSize="@dimen/text_size" />
+
+                    <View
+                        android:id="@+id/para_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1px"
+                        android:layout_below="@+id/et_password"
+                        android:background="@color/text_color_seconds" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_sign_up"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/infor"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@color/colorPrimary"
+                    android:elevation="5dp"
+                    android:paddingLeft="8dp"
+                    android:text="Đăng kí"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_large"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

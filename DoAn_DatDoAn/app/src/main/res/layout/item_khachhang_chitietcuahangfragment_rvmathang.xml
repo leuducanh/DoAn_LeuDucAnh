@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="#fff"
+    android:elevation="1dp">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="4dp"
+    android:gravity="center_vertical"
+    >
+
+    <ImageView
+        android:layout_marginLeft="5dp"
+        android:id="@+id/ivmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        />
+
+    <TextView
+        android:id="@+id/tvtenmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_toRightOf="@id/ivmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:text="aaaaaaa"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="10dp"
+        android:textColor="#000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvmotamathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_toRightOf="@id/ivmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_below="@id/tvtenmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:textSize="10sp"
+        android:layout_alignLeft="@+id/tvtenmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:textColor="#50000000"
+        android:text="aaaaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tvgia_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_alignLeft="@+id/tvtenmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_below="@id/tvmotamathang_khachhang_xemchitietcuahang_rvmathang"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:textSize="10sp"
+        android:text="aaaaaaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:background="@drawable/cross"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/ivcong"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <TextView
+        android:gravity="center"
+        android:text="125663"
+        android:textColor="#000000"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/ivcong"
+        android:layout_marginRight="10dp"
+        android:id="@+id/tvsoluong_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp" />
+
+    <ImageView
+        android:visibility="gone"
+        android:background="@drawable/sub"
+        android:layout_toLeftOf="@+id/tvsoluong_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/ivtru"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+    <TextView
+        android:background="#60140c0c"
+        android:layout_below="@+id/ivmathang_khachhang_xemchitietcuahang_rvmathang"
+        android:layout_width="match_parent"
+        android:layout_height="2px" />
+</RelativeLayout>
+</android.support.v7.widget.CardView>

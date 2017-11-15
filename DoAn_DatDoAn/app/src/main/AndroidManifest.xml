@@ -21,6 +21,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:screenOrientation="portrait"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -36,19 +37,54 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"></meta-data>
         </provider>
-        <activity android:name=".activity.SignUpSignInActivity">
-
-        </activity>
-        <activity
-            android:name=".activity.CuaHangActivity"
-            android:label="@string/title_activity_cua_hang"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".activity.SignUpSignInActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.CuaHangActivity"
+            android:label="Cửa hàng"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".activity.KhachHangActivity"
+            android:label="Khách hàng"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".activity.XemCuaHangActivity"
+            android:label="Khách hàng"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <service
+            android:name=".services.FirebaseMessagingService"
+            android:icon="@drawable/ic_store_primary_24dp"
+            android:label="uio"
+            >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+        <service android:name=".services.FirebaseIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rlmain_khachhang_search_viewpager_frament"
+    tools:context="leu.doan_datdoan.fragment.khachhang.KhachHang_SearchViewPagerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <FrameLayout
+        android:layout_alignParentTop="true"
+        android:id="@+id/frl_khachhang_search_viewpager_frament"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_khachhang_search_viewpager_frament"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary" />
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/searchview_khachhang_search_viewpager_frament"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_khachhang_search_viewpager_frament"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/ic_search_black_24dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_khachhang_search_viewpager_frament"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/frl_khachhang_search_viewpager_frament"
+        android:layout_marginTop="5dp">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:id="@+id/rotatesearch_khachhang_search_viewpager_frament"
+            style="@style/AVLoadingIndicatorView"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_centerInParent="true"
+            android:visibility="visible"
+            app:indicatorColor="@color/search"
+            app:indicatorName="BallClipRotatePulseIndicator" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/frl_khachhang_search_viewpager_frament"
+        android:id="@+id/rv_khachhang_search_viewpager_frament"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+</RelativeLayout>

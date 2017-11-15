@@ -1,18 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="leu.doan_datdoan.activity.SignUpSignInActivity">
+    android:background="#00000000"
+    tools:context=".activity.SignUpSignInActivity">
+
+    <ImageView
+        android:id="@+id/iv_AppPic"
+        android:layout_width="match_parent"
+        android:layout_height="235dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/bg_login_register" />
+
+    <ImageView
+        android:id="@+id/iv_UserPic"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_alignTop="@+id/iv_AppPic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="20dp"
+        app:srcCompat="@drawable/app_icon" />
 
     <TextView
+        android:id="@+id/tv_sign_in"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_below="@+id/iv_UserPic"
+        android:layout_centerHorizontal="true"
+        android:text="Phục Vụ"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="36.5sp"
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_sign_in"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        android:text="đồ ăn"
+        android:textAllCaps="true"
+        android:textColor="#fff"
+        android:textSize="@dimen/text_size"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:layout_above="@+id/tv_your_acc"
+        android:layout_alignRight="@+id/tv_sign_in"
+        android:layout_marginBottom="6dp"
+        android:layout_toRightOf="@+id/tv_to"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:layout_alignRight="@+id/tv_sign_in"
+        android:layout_below="@+id/tv_sign_in"
+        android:layout_marginTop="7dp"
+        android:layout_toRightOf="@+id/tv_to"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:layout_above="@+id/tv_your_acc"
+        android:layout_alignLeft="@+id/tv_sign_in"
+        android:layout_marginBottom="6dp"
+        android:layout_toLeftOf="@+id/tv_to"
+        android:background="@color/white" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4px"
+        android:layout_alignLeft="@+id/tv_sign_in"
+        android:layout_below="@+id/tv_sign_in"
+        android:layout_marginTop="7dp"
+        android:layout_toLeftOf="@+id/tv_to"
+        android:background="@color/white" />
+
+    <TextView
+        android:id="@+id/tv_your_acc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_to"
+        android:layout_centerHorizontal="true"
+        android:text="Trực tuyến"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_large"
+        android:textStyle="bold" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/iv_AppPic"
+        android:background="@color/white">
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabl_main"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:background="@color/white"
+            app:tabIndicatorHeight="0dp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/tabl_main"
+            android:layout_centerHorizontal="true"
+            android:background="@color/text_color_seconds" />
+
+        <View
+            android:id="@+id/bg_top_"
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:layout_alignBottom="@id/tabl_main"
+            android:background="@color/transparent" />
+        <View
+            android:id="@+id/hole_1_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignTop="@+id/bg_top_"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp" />
+
+        <View
+            android:id="@+id/hole_2_"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/bg_top_"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/small_hole"
+            android:elevation="1dp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="12dp"
+            android:layout_alignLeft="@+id/hole_1_"
+            android:layout_alignTop="@+id/hole_1_"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="3dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp" />
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="12dp"
+            android:layout_alignLeft="@+id/hole_2_"
+            android:layout_alignTop="@+id/hole_2_"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="3dp"
+            android:background="#ebdbc3"
+            android:elevation="1dp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/bg_top_"
+            android:background="@drawable/bg"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </RelativeLayout>
+</RelativeLayout>

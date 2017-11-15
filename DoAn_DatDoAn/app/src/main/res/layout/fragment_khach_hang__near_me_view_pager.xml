@@ -1,0 +1,55 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/cdl_khachhang_nearme_viewpager"
+    tools:context="leu.doan_datdoan.fragment.khachhang.KhachHang_NearMeViewPagerFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <fragment
+        android:id="@+id/map_khachhang_nearme_viewpagerfragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+    <RelativeLayout
+        android:id="@+id/bottomsheet_khachhang_nearme_viewpagerfragment"
+        app:layout_behavior="@string/bottom_sheet_behavior"
+        android:layout_width="match_parent"
+        android:paddingLeft="@dimen/fab_margin"
+        android:paddingRight="@dimen/fab_margin"
+        android:background="@drawable/background_rv_khachhang_nearme_viewpagerfragment"
+        android:layout_height="350dp">
+
+        <TextView
+            android:id="@+id/tvsoluong_khachhang_nearme_viewpagerfragment"
+            android:layout_below="@+id/tv_khachhang_nearme_viewpagerfragment"
+            android:textColor="@color/secondary_text"
+            android:layout_width="match_parent"
+            android:textAlignment="textStart"
+            android:layout_marginTop="5px"
+            android:textSize="30px"
+            android:layout_height="40px"
+            android:text="0 Cửa hàng"/>
+
+        <TextView
+            android:id="@+id/tv_khachhang_nearme_viewpagerfragment"
+            android:text="Pull"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="100px" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="10px"
+            android:layout_below="@+id/tvsoluong_khachhang_nearme_viewpagerfragment"
+            android:id="@+id/rv_khachhang_nearme_viewpagerfragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>

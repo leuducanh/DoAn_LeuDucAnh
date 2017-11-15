@@ -1,4 +1,4 @@
-package leu.doan_datdoan.events;
+package leu.doan_datdoan.events.cuahang;
 
 import java.util.List;
 

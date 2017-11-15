@@ -1,10 +1,10 @@
 package leu.doan_datdoan.activity;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.SubMenu;
 import android.support.design.widget.NavigationView;
@@ -16,16 +16,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
+import com.google.firebase.FirebaseApp;
 import com.victor.loading.rotate.RotateLoading;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-
-import butterknife.BindView;
 import leu.doan_datdoan.R;
-import leu.doan_datdoan.events.CuaHang_DisableTrangChuEvent;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_ChiTietPheDuyetFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_MatHangFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_NhapHangFragment;
@@ -40,6 +35,7 @@ import retrofit2.Response;
 
 public class CuaHangActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
 
     private static final String TRANGCHU_CUAHANG_FRAGMEN_TAG = "trangchu_cuahang_fragment_tag";
     private static final String THONGTIN_CUAHANG_FRAGMEN_TAG = "thongtin_cuahang_fragment_tag";
@@ -58,11 +54,11 @@ public class CuaHangActivity extends AppCompatActivity
 
     private boolean dangLamMatHang = false;
     private boolean dangDuyetDonHang = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cua_hang);
+        FirebaseApp.initializeApp(this);
 
         dialog = new Dialog(this);
         View v = LayoutInflater.from(this).inflate(R.layout.dialog_loading,null,false);
@@ -84,7 +80,9 @@ public class CuaHangActivity extends AppCompatActivity
         navigationView = (NavigationView) findViewById(R.id.nav_cuahang);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+        Intent i = getIntent();
+        daTaoCuaHang = i.getBooleanExtra(KEY_BUNDLE_DATAOCUAHANG,false);
+        idTaiKhoan = i.getIntExtra(KEY_BUNDLE_IDTAIKHOAN,0);
 
         if(daTaoCuaHang){
             RetrofitFactory.getInstance().createService(TaiKhoanService.class).layCuaHangBangIdTaiKhoan(idTaiKhoan).enqueue(new Callback<CuaHang>() {
@@ -107,6 +105,11 @@ public class CuaHangActivity extends AppCompatActivity
             navigationView.setCheckedItem(R.id.nav_cuahang_thongtin);
             onNavigationItemSelected(navigationView.getMenu().getItem(1));
         }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 
     private void enableOtherItem(boolean flag) {
@@ -201,7 +204,7 @@ public class CuaHangActivity extends AppCompatActivity
             fragmentTransaction.replace(R.id.rl_cuahang_nav_for_fragment,cuaHang_nhapHangFragment);
             fragmentTransaction.commit();
         }else if(id == R.id.nav_cuahang_thoat){
-
+            finish();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

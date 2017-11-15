@@ -1,0 +1,300 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#ffff"
+    tools:context="leu.doan_datdoan.fragment.khachhang.KhachHang_XacNhanDatHangFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsvmain_khachhang_xacnhandathangfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/map_khachhang_xacnhandathangfragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:id="@+id/ivtran_khachhang_xacnhandathangfragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl2_khachhang_xacnhandathangfragment"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_below="@+id/map_khachhang_xacnhandathangfragment"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivreddot"
+                    android:background="@drawable/ic_brightness_1_red_24dp"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp" />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/ivreddot"
+                    android:textStyle="bold"
+                    android:id="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:textColor="#000"
+                    android:text="leu duc anh"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:textColor="#8a545252"
+                    android:layout_marginLeft="10dp"
+                    android:text="ĐẶT"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignLeft="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:id="@+id/tvtencuahang_khachhang_xacnhandathang"
+                    android:text="Cửa hàng nào đó"
+                    android:layout_below="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_alignLeft="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:id="@+id/tvdiachicuahang_khachhang_xacnhandathang"
+                    android:text="Cua hang nao do"
+                    android:layout_below="@+id/tvtencuahang_khachhang_xacnhandathang"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+                    android:layout_alignLeft="@+id/ivreddot"
+                    android:layout_alignTop="@+id/tvden_khachhang_xacnhandathangfragment"
+                    android:id="@+id/ivgreendot"
+                    android:background="@drawable/ic_brightness_1_green_24dp"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ivgreendot"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tvden_khachhang_xacnhandathangfragment"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignLeft="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:text="ĐẾN"
+                    android:layout_below="@+id/tvdiachicuahang_khachhang_xacnhandathang"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/tvdiachinguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignLeft="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:text="Địa chỉ nào đó"
+                    android:layout_below="@+id/tvdiachicuahang_khachhang_xacnhandathang"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignLeft="@+id/tvdiachinguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_below="@+id/tvkhoangcach_khachhang_xacnhandathang"
+                    android:id="@+id/tvphivanchuyen_khachhang_xacnhandathang"
+                    android:text="Phí vận chuyển"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignLeft="@+id/tvtentaikhoan_khachhang_xacnhandathangfragment"
+                    android:id="@+id/tvkhoangcach_khachhang_xacnhandathang"
+                    android:text="Khoảng cách"
+                    android:layout_below="@+id/tvdiachinguoidat_khachhang_xacnhandathangfragment"
+                    android:textColor="#8aff0101"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tvline1_khachhang_xacnhandathang"
+                    android:layout_centerHorizontal="true"
+                    android:background="#3b000000"
+                    android:layout_marginTop="10sp"
+                    android:layout_below="@+id/tvphivanchuyen_khachhang_xacnhandathang"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <LinearLayout
+                    android:background="@drawable/corner_timdiadiemkhac_button"
+                    android:padding="8dp"
+                    android:clickable="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:orientation="horizontal"
+                    android:id="@+id/lntimdiadiem_khachhang_xacnhandathang"
+                    android:layout_below="@+id/tvline1_khachhang_xacnhandathang"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:layout_gravity="center_vertical"
+                        android:textSize="12sp"
+                        android:layout_width="wrap_content"
+                        android:text="Xác định địa điểm khác trên bản đồ  "
+                        android:layout_height="wrap_content" />
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/ic_search_green_24dp"
+                        android:layout_width="12sp"
+                        android:layout_height="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvdientennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_marginTop="20sp"
+                    android:layout_below="@+id/lntimdiadiem_khachhang_xacnhandathang"
+                    android:textSize="14sp"
+                    android:text="Tên người đặt: "
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edtennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_alignBottom="@+id/tvdientennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_toRightOf="@+id/tvdientennguoidat_khachhang_xacnhandathangfragment"
+                    android:textSize="12sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Số điện thoại: "
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tvdiensdt_khachhang_xacnhandathangfragment"
+                    android:layout_below="@+id/tvdientennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_alignLeft="@+id/tvdientennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <EditText
+                    android:id="@+id/edsdt_khachhang_xacnhandathangfragment"
+                    android:layout_alignLeft="@+id/edtennguoidat_khachhang_xacnhandathangfragment"
+                    android:layout_alignBottom="@+id/tvdiensdt_khachhang_xacnhandathangfragment"
+                    android:layout_toRightOf="@+id/tvdiensdt_khachhang_xacnhandathangfragment"
+                    android:layout_toLeftOf="@+id/ivsdtkhac_khachhang_xacnhandathangfragment"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignBottom="@+id/edsdt_khachhang_xacnhandathangfragment"
+                    android:background="@drawable/ic_call_green_24dp"
+                    android:id="@+id/ivsdtkhac_khachhang_xacnhandathangfragment"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+            </RelativeLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_marginTop="20dp"
+                android:id="@+id/nsv_khachhang_xacnhandathangfragment"
+                android:layout_below="@+id/rl2_khachhang_xacnhandathangfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvhangdat_xacnhandathangfragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </android.support.v4.widget.NestedScrollView>
+
+            <TextView
+                android:text="Abc"
+                android:padding="5dp"
+                android:id="@+id/tvtienhang_khachhang_xacnhandathang"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/nsv_khachhang_xacnhandathangfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Abc"
+                android:padding="5dp"
+                android:id="@+id/tvtongtien_khachhang_xacnhandathang"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/tvtienhang_khachhang_xacnhandathang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <ScrollView
+                android:id="@+id/sv_khachhang_xacnhandathangfragment"
+                android:layout_margin="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvtongtien_khachhang_xacnhandathang"
+                android:isScrollContainer="false"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <EditText
+                    android:paddingTop="5dp"
+                    android:id="@+id/edghichu_khachhang_xacnhandathangfragment"
+                    android:hint="Ghi Chú"
+                    android:textColor="#000"
+                    android:textSize="14sp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="left|top"
+                    android:inputType="textAutoComplete|textMultiLine"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="80dp"
+                    android:background="@drawable/border_edittext" />
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/sv_khachhang_xacnhandathangfragment"
+                android:id="@+id/rldathang_khachhang_xacnhandathangfragment"
+                android:background="@color/giohang"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginTop="2dp"
+                    android:textSize="20dp"
+                    android:text="Đặt Hàng"
+                    android:textColor="#fff"
+                    android:gravity="center"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

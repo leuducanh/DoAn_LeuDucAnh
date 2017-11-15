@@ -12,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by MyPC on 31/10/2017.
@@ -29,4 +30,10 @@ public interface CuaHangService {
 
     @GET("/DoAn/webapi/cuahang/{id}/donhang")
     Call<List<DonHang>> layDonHangTuCuaHang(@Path("id")int id);
+
+    @GET("/DoAn/webapi/cuahang")
+    Call<List<CuaHang>> layCuaHangTheoTen(@Query("ten") String ten);
+
+    @GET("/DoAn/webapi/cuahang/gandiadiem")
+    Call<List<CuaHang>> layCuaHangGanViTri(@Query("lat") double lat,@Query("lng") double lng);
 }

@@ -1,4 +1,4 @@
-package leu.doan_datdoan.events;
+package leu.doan_datdoan.events.cuahang;
 
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.model.DonHang;
@@ -10,6 +10,7 @@ import leu.doan_datdoan.model.DonHang;
 public class CuaHang_OnClickChiTietPheDuyetMatHang {
     private DonHang donHang;
     private CuaHang cuaHang;
+
 
     public CuaHang_OnClickChiTietPheDuyetMatHang(DonHang donHang, CuaHang cuaHang) {
         this.donHang = donHang;
