@@ -137,7 +137,6 @@ public class TrangChuKhachHangFragment extends Fragment {
 
     @Subscribe(sticky = true)
     public void onKhachHang_ChonCuaHang(KhachHang_OnClickChonCuaHangEvent khachHang_onClickChonCuaHangEvent){
-        Log.d("abc","abc");
         Intent i = new Intent(getActivity(), XemCuaHangActivity.class);
         i.putExtra(XemCuaHangActivity.KHACHHANG_XEMCHITIETCUAHANG_FRAGMENT_CUAHANGKEY, khachHang_onClickChonCuaHangEvent.getCuaHang());
         i.putExtra(XemCuaHangActivity.KHACHHANG_XEMCHITIETCUAHANG_FRAGMENT_KHACHHANGKEY,kh);

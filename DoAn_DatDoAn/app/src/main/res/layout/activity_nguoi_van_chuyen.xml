@@ -1,0 +1,215 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:background="#ffff"
+    tools:context="leu.doan_datdoan.activity.NguoiVanChuyenActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsvmain_nvcfragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:id="@+id/map_nvcfragment"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+            <ImageView
+                android:id="@+id/ivtran_nvcfragment"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" />
+
+
+            <RelativeLayout
+                android:id="@+id/rl2_nvcfragment"
+                android:paddingTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_below="@+id/map_nvcfragment"
+                android:background="#fff"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/ivreddot"
+                    android:background="@drawable/ic_brightness_1_red_24dp"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp" />
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/ivreddot"
+                    android:textStyle="bold"
+                    android:id="@+id/tvnguoidat_nvcfragment"
+                    android:textColor="#000"
+                    android:text="Tên người đặt"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_toRightOf="@+id/tvnguoidat_nvcfragment"
+                    android:textColor="#8a545252"
+                    android:layout_marginLeft="10dp"
+                    android:text="ĐẶT"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
+                    android:id="@+id/tvtencuahang_nvc"
+                    android:text="Tên cửa hàng"
+                    android:layout_below="@+id/tvnguoidat_nvcfragment"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <ImageView
+                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:layout_alignLeft="@+id/ivreddot"
+                    android:layout_alignTop="@+id/tvden_nvcfragment"
+                    android:id="@+id/ivgreendot"
+                    android:background="@drawable/ic_brightness_1_green_24dp"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp" />
+
+                <TextView
+                    android:layout_toRightOf="@+id/ivgreendot"
+                    android:layout_marginLeft="5dp"
+                    android:id="@+id/tvden_nvcfragment"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
+                    android:text="ĐẾN"
+                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:textColor="#8a545252"
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <TextView
+                    android:id="@+id/tvdiachinguoidat_nvc"
+                    android:layout_marginTop="25dp"
+                    android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
+                    android:text="Địa chỉ người đặt"
+                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tvdiachinguoidat_nvc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:visibility="gone"
+
+                        android:id="@+id/btnnhandon_nvc"
+                        android:textColor="#fff"
+                        android:background="@drawable/ripple_button"
+                        android:layout_weight="1"
+                        android:text="Nhận đơn"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+
+                    <TextView
+                        android:layout_weight=".5"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+
+                    <Button
+                        android:visibility="gone"
+
+                        android:id="@+id/btnhuydon_nvc"
+                        android:textColor="#fff"
+                        android:background="@drawable/corner_dialog_camera"
+                        android:layout_weight="1"
+                        android:text="Hủy đơn"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/tvdiachinguoidat_nvc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:visibility="gone"
+                        android:id="@+id/btnnhanhang_nvc"
+                        android:textColor="#fff"
+                        android:background="@drawable/ripple_button"
+                        android:layout_weight="1"
+                        android:text="Gọi cửa hàng"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+
+                    <TextView
+                        android:layout_weight=".5"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+
+                    <Button
+                        android:visibility="gone"
+
+                        android:id="@+id/btngiaohang_nvc"
+                        android:textColor="#fff"
+                        android:background="@drawable/corner_dialog_camera"
+                        android:layout_weight="1"
+                        android:text="Gọi Người đặt"
+                        android:layout_width="0dp"
+                        android:layout_height="35dp" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:text="Abc"
+                android:padding="5dp"
+                android:id="@+id/tvtienship_nvc"
+                android:layout_marginTop="20dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/rl2_nvcfragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Abc"
+                android:padding="5dp"
+                android:id="@+id/tvtongtien_nvc"
+                android:layout_marginTop="5dp"
+                android:textSize="16sp"
+                android:layout_below="@+id/tvtienship_nvc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tvhuydon_nvc"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tvtongtien_nvc"
+                android:background="#8fcec6c6"
+                android:textColor="#fff"
+                android:text="Hủy đơn"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

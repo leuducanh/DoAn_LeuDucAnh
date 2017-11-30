@@ -23,6 +23,8 @@ import leu.doan_datdoan.fragment.cuahang.CuaHang_PheDuyetFragment;
 public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
 
     private final String CUAHANG_THEMDONHANG = "themdonhang";
+    private final String CUAHANG_PHEDUYET = "pheduyet";
+    private final String CUAHANG_HUY = "huypheduyet";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -38,12 +40,21 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
 
     private void xuLiBroadcast(String chuDe,String thongDiep,String json) {
         Intent intent = new Intent();
+        Log.d("abcdef","firebase" + chuDe);
         switch (chuDe){
             case CUAHANG_THEMDONHANG:
                 pushNoti("Thêm đơn hàng mới",thongDiep);
                 intent.setAction(CuaHang_PheDuyetFragment.CUAHANG_PHEDUYETBROADCAST);
                 intent.putExtra("donhang",json);
                 sendBroadcast(intent);
+                break;
+            case CUAHANG_PHEDUYET:
+                pushNoti("Đơn hàng của bạn đã được phê duyệt",thongDiep);
+
+                break;
+            case CUAHANG_HUY:
+                pushNoti("Đơn hàng của bạn đã bị hủy",thongDiep);
+
                 break;
         }
 

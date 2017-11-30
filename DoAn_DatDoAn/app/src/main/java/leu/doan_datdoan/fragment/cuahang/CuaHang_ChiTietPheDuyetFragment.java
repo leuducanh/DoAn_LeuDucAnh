@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -160,8 +161,8 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     @OnClick(R.id.btnpheduyet_cuahang_chitietpheduyetfragment)
     public void onClickPheDuyetDonHang() {
         ((CuaHangActivity) activity).showingDialog();
-
-        RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(), new DonHang(donHang.getId(), DONHANG_PHEDUYET)).enqueue(new Callback<ResponseBody>() {
+        donHang.setTrangThai(DONHANG_PHEDUYET);
+        RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(),donHang ).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
@@ -264,6 +265,7 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     public void onCickChiTietPheduyetMatHang(CuaHang_OnClickChiTietPheDuyetMatHang cuaHang_onClickChiTietPheDuyetMatHang) {
         cuaHang = cuaHang_onClickChiTietPheDuyetMatHang.getCuaHang();
         donHang = cuaHang_onClickChiTietPheDuyetMatHang.getDonHang();
+        donHang.setCuaHang(cuaHang);
         tvNguoiDat.setText(donHang.getTenNguoiDat());
         tvDiaChi.setText(donHang.getDiaChi());
         tvGhiChu.setText(donHang.getGhiChu());

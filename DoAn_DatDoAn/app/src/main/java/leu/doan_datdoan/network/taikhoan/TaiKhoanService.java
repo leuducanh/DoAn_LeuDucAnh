@@ -2,6 +2,7 @@ package leu.doan_datdoan.network.taikhoan;
 
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.model.KhachHang;
+import leu.doan_datdoan.model.NguoiVanChuyen;
 import leu.doan_datdoan.model.TaiKhoan;
 import leu.doan_datdoan.network.Message;
 import okhttp3.ResponseBody;
@@ -21,6 +22,9 @@ public interface TaiKhoanService {
 
     @POST("/DoAn/webapi/taikhoan/{id}/cuahang")
     Call<CuaHang> khoiTaoCuaHang(@Path("id")int idTaiKhoan, @Body CuaHang cuaHang);
+
+    @POST("/DoAn/webapi/taikhoan/{id}/nguoivanchuyen")
+    Call<NguoiVanChuyen> khoiTaoNguoiVanChuyen(@Path("id")int idTaiKhoan, @Body NguoiVanChuyen nguoiVanChuyen);
 
     @POST("/DoAn/webapi/taikhoan/{id}/khachhang")
     Call<KhachHang> khoiTaoKhachHang(@Path("id")int idTaiKhoan, @Body KhachHang khachHang);
@@ -45,4 +49,10 @@ public interface TaiKhoanService {
 
     @PUT("/DoAn/webapi/taikhoan/kiemtrataikhoan")
     Call<Message> kiemTraTaiKhoan(@Body TaiKhoan tk);
+
+    @GET("/DoAn/webapi/taikhoan/{id}/nvc")
+    Call<NguoiVanChuyen> layNVCBangIdTaiKhoan(@Path("id")int idTaiKhoan);
+
+    @POST("/DoAn/webapi/taikhoan/{id}/nguoivanchuyen")
+    Call<NguoiVanChuyen> taoNguoiVanChuyenChoTaiKhoan(@Path("id")int id,@Body NguoiVanChuyen nguoiVanChuyen);
 }

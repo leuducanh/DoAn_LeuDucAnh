@@ -136,38 +136,35 @@ public class SignUpSignInActivity extends AppCompatActivity{
         textViewArrayList = new ArrayList<>();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        dialog = new Dialog(this);
-        dialog.setContentView(R.layout.dialog_chuyen);
-        rotateLoading = (AVLoadingIndicatorView) dialog.findViewById(R.id.rotatechuyen);
-        dialog.setCancelable(false);
-        dialog.setCanceledOnTouchOutside(false);
-
-
-        pinDialog = new Dialog(this);
-        View v = LayoutInflater.from(this).inflate(R.layout.dialog_pincode,null,false);
-
-        edPin = (PinEntryEditText) v.findViewById(R.id.edpin_pincodedialog);
-        btnMoGuiMa = (TextView) v.findViewById(R.id.btndialogguima_pincodedialog);
-        btnKiemtra = (Button) v.findViewById(R.id.btnkiemtra_pincodedialog);
-
-        pinDialog.setContentView(v);
-        pinDialog.setCancelable(false);
-        pinDialog.setCanceledOnTouchOutside(false);
-
-
-        guiDialog = new Dialog(this);
-        View v1 = LayoutInflater.from(this).inflate(R.layout.dialog_guicode,null,false);
-
-        btnGuiMa = (TextView) v1.findViewById(R.id.btn_dialogguicode);
-        edGuiMa = (EditText) v1.findViewById(R.id.ed_dialogguicode);
-
-        guiDialog.setContentView(v1);
-        guiDialog.setCancelable(false);
-        guiDialog.setCanceledOnTouchOutside(false);
-    }
+//    @Override
+//    protected void onResume() {
+//        super.onResume();
+//        dialog.setContentView(R.layout.dialog_chuyen);
+//        rotateLoading = (AVLoadingIndicatorView) dialog.findViewById(R.id.rotatechuyen);
+//        dialog.setCancelable(false);
+//        dialog.setCanceledOnTouchOutside(false);
+//
+//
+//        View v = LayoutInflater.from(this).inflate(R.layout.dialog_pincode,null,false);
+//
+//        edPin = (PinEntryEditText) v.findViewById(R.id.edpin_pincodedialog);
+//        btnMoGuiMa = (TextView) v.findViewById(R.id.btndialogguima_pincodedialog);
+//        btnKiemtra = (Button) v.findViewById(R.id.btnkiemtra_pincodedialog);
+//
+//        pinDialog.setContentView(v);
+//        pinDialog.setCancelable(false);
+//        pinDialog.setCanceledOnTouchOutside(false);
+//
+//
+//        View v1 = LayoutInflater.from(this).inflate(R.layout.dialog_guicode,null,false);
+//
+//        btnGuiMa = (TextView) v1.findViewById(R.id.btn_dialogguicode);
+//        edGuiMa = (EditText) v1.findViewById(R.id.ed_dialogguicode);
+//
+//        guiDialog.setContentView(v1);
+//        guiDialog.setCancelable(false);
+//        guiDialog.setCanceledOnTouchOutside(false);
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,6 +211,8 @@ public class SignUpSignInActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 guiDialog.dismiss();
+
+                Log.d("Abcde","1234");
 
                 RetrofitFactory.getInstance().createService(TaiKhoanService.class).guiSmsXacNhan(taiKhoan.getId(),edGuiMa.getText().toString()).enqueue(new Callback<Message>() {
                     @Override
@@ -287,6 +286,17 @@ public class SignUpSignInActivity extends AppCompatActivity{
                 i.putExtra(KhachHangActivity.KEY_BUNDLE_IDTAIKHOAN,taiKhoan.getId());
                 i.putExtra(KhachHangActivity.KEY_BUNDLE_DATAOKHACHHANG,dangTao);
                 i.putExtra(KhachHangActivity.KEY_BUNDLE_USERNAME,username);
+                startActivity(i);
+
+                break;
+            }
+            case ("nguoivanchuyen"):{
+                dismissDialog();
+
+                Log.d("avc",""+taiKhoan.getId());
+                Intent i = new Intent(this,NguoiVanChuyenActivity.class);
+                i.putExtra(KhachHangActivity.KEY_BUNDLE_IDTAIKHOAN,taiKhoan.getId());
+                i.putExtra(KhachHangActivity.KEY_BUNDLE_DATAOKHACHHANG,dangTao);
                 startActivity(i);
 
                 break;

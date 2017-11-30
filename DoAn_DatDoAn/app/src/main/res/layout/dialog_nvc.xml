@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:padding="20dp"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv1_dialognvc"
+        android:text="Biển số xe"
+        android:textSize="18sp"
+        android:layout_alignBottom="@+id/edbienso_dialognvc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv1_dialognvc"
+        android:id="@+id/edbienso_dialognvc"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv2_dialognvc"
+        android:layout_below="@+id/tv1_dialognvc"
+        android:text="Số điện thoại"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_below="@+id/tv1_dialognvc"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/tv2_dialognvc"
+        android:id="@+id/edsdt_dialognvc"
+        android:textSize="16sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSave_dialognvc"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/edsdt_dialognvc"
+        android:text="Save"
+        android:textColor="#fff"
+        android:background="@drawable/corner_dialog_camera"
+        android:textSize="16sp"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
