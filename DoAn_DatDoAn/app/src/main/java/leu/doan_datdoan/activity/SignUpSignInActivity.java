@@ -211,9 +211,6 @@ public class SignUpSignInActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 guiDialog.dismiss();
-
-                Log.d("Abcde","1234");
-
                 RetrofitFactory.getInstance().createService(TaiKhoanService.class).guiSmsXacNhan(taiKhoan.getId(),edGuiMa.getText().toString()).enqueue(new Callback<Message>() {
                     @Override
                     public void onResponse(Call<Message> call, Response<Message> response) {
@@ -293,10 +290,10 @@ public class SignUpSignInActivity extends AppCompatActivity{
             case ("nguoivanchuyen"):{
                 dismissDialog();
 
-                Log.d("avc",""+taiKhoan.getId());
+                Log.d("abcd",""+taiKhoan.getId());
                 Intent i = new Intent(this,NguoiVanChuyenActivity.class);
-                i.putExtra(KhachHangActivity.KEY_BUNDLE_IDTAIKHOAN,taiKhoan.getId());
-                i.putExtra(KhachHangActivity.KEY_BUNDLE_DATAOKHACHHANG,dangTao);
+                i.putExtra(NguoiVanChuyenActivity.KEY_BUNDLE_IDTAIKHOAN,taiKhoan.getId());
+                i.putExtra(NguoiVanChuyenActivity.KEY_BUNDLE_DATAONVC,dangTao);
                 startActivity(i);
 
                 break;
@@ -372,6 +369,7 @@ public class SignUpSignInActivity extends AppCompatActivity{
         username = signInEvent.getUsername();
         String password = signInEvent.getPassword();
 
+        Activity activity = this;
         RetrofitFactory.getInstance().createService(TaiKhoanService.class).kiemTraTaiKhoan(new TaiKhoan(0,username,password)).enqueue(new Callback<Message>() {
             @Override
             public void onResponse(Call<Message> call, Response<Message> response) {
@@ -385,11 +383,14 @@ public class SignUpSignInActivity extends AppCompatActivity{
                         dangTao = Boolean.parseBoolean(l[3]);
 
                         capNhapTokenFirebase(taiKhoan.getId());
-                    }else{
+                    }else if(l[0].equals("Canmaxacnhan")){
                         loai = l[1];
                         taiKhoan = new TaiKhoan(Integer.parseInt(l[2]),"","");
                         dangTao = false;
                         pinDialog.show();
+                    }else{
+                        dismissDialog();
+                        Toast.makeText(activity,"Không tồn tại tài khoản",Toast.LENGTH_SHORT).show();
                     }
                 }
             }

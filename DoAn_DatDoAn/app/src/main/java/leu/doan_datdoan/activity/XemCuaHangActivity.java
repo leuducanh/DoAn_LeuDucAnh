@@ -109,6 +109,7 @@ public class XemCuaHangActivity extends AppCompatActivity{
 
     public void toXacNhanDatHangFragment(){
         khachHang_xacNhanDatHangFragment = new KhachHang_XacNhanDatHangFragment();
+        khachHang_xacNhanDatHangFragment.setActivity(this);
         ScreenManager.addFragment(getSupportFragmentManager(),khachHang_xacNhanDatHangFragment,R.id.rl_khachhang_dathangactivity,true,false);
         ScreenManager.showFragment(getSupportFragmentManager(),khachHang_xacNhanDatHangFragment);
         dangXacNhan = true;
@@ -116,15 +117,12 @@ public class XemCuaHangActivity extends AppCompatActivity{
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d("a123a",requestCode +"");
         switch (requestCode) {
             case PLACE_PICKER_REQUEST:
                 if (resultCode == Activity.RESULT_OK) {
                     Place place = PlacePicker.getPlace(data, getApplicationContext());
-                    Log.d("a123a", requestCode + " 1");
 
                     khachHang_xacNhanDatHangFragment.onPlacePickerEvent(new KhachHang_OnPlacePickerEvent(place));
-                    Log.d("a123a", requestCode + " 2");
 
 
 //

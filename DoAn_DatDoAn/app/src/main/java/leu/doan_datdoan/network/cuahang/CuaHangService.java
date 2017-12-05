@@ -5,6 +5,7 @@ import java.util.List;
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.model.DonHang;
 import leu.doan_datdoan.model.LoaiHang;
+import leu.doan_datdoan.model.ThongKe;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -36,4 +37,7 @@ public interface CuaHangService {
 
     @GET("/DoAn/webapi/cuahang/gandiadiem")
     Call<List<CuaHang>> layCuaHangGanViTri(@Query("lat") double lat,@Query("lng") double lng);
+
+    @GET("/DoAn/webapi/cuahang/{id}/thongke")
+    Call<ThongKe> thongKeCuaHang(@Path("id")int id,@Query("ngay")int ngay,@Query("thang")int thang,@Query("nam")int nam,@Query("chedo")int cheDo);
 }

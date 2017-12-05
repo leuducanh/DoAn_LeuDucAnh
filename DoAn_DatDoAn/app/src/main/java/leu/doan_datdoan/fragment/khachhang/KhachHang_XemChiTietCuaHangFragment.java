@@ -103,8 +103,8 @@ public class KhachHang_XemChiTietCuaHangFragment extends Fragment implements Kha
     TextView tvKhoangCach;
     @BindView(R.id.tvhoatdongcuahang_khachhang_xemchitietcuahangfragment)
     TextView tvHoatDong;
-    @BindView(R.id.tvphigiaohang_khachhang_xemchitietcuahangfragment)
-    TextView tvPhiGiaoHang;
+//    @BindView(R.id.tvphigiaohang_khachhang_xemchitietcuahangfragment)
+//    TextView tvPhiGiaoHang;
     @BindView(R.id.rltinhkhoangcach_khachhang_xemchitietcuahangfragment)
     RelativeLayout rlHoatDongCuaHang;
     @BindView(R.id.ivcuahang_khachhang_xemchitietcuahangfragment)
@@ -314,7 +314,7 @@ public class KhachHang_XemChiTietCuaHangFragment extends Fragment implements Kha
 
 
         tvTenCuaHang.setText(cuaHang.getTen());
-        tvPhiGiaoHang.setText(phiGiaoHang + " đ/Km");
+//        tvPhiGiaoHang.setText(phiGiaoHang + " đ/Km");
         tvDiaChi.setText(cuaHang.getDiaDiem());
 
         tvTongGia.setText(soPhan + " phần - " + Util.formatConcurrency(tongGia));
@@ -503,6 +503,7 @@ public class KhachHang_XemChiTietCuaHangFragment extends Fragment implements Kha
 
     @Override
     public void onLocationChanged(Location location) {
+
         mLastLocation = location;
 
         tvKhoangCach.setText((double) Math.round(distFrom(location.getLatitude(), location.getLongitude(), cuaHang.getLat(), cuaHang.getLng()) / 100) / 10 + "km");

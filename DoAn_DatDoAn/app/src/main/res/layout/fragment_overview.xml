@@ -1,0 +1,226 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="leu.doan_datdoan.fragment.cuahang.Overview">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nsv_cuahang_overview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:padding="10dp"
+                android:id="@+id/rlchedo_overview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:background="@drawable/ic_overview_default"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/ivchedo_overview"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:text="Chế độ:"
+                    android:layout_alignTop="@+id/radiochedo_overview"
+                    android:layout_alignBottom="@+id/radiochedo_overview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <co.ceryle.radiorealbutton.RadioRealButtonGroup
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/ivchedo_overview"
+                    android:id="@+id/radiochedo_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:elevation="5dp"
+                    app:rrbg_animateTexts_enter="overshoot"
+                    app:rrbg_animateTexts_enterDuration="500"
+                    app:rrbg_backgroundColor="#69ffffff"
+                    app:rrbg_bottomLineColor="@color/colorPrimary"
+                    app:rrbg_bottomLineSize="2dp"
+                    app:rrbg_checkedPosition="2"
+                    app:rrbg_dividerColor="@color/colorPrimary"
+                    app:rrbg_dividerPadding="10dp"
+                    app:rrbg_dividerRadius="0dp"
+                    app:rrbg_dividerSize="1dp"
+                    app:rrbg_enableDeselection="false"
+                    app:rrbg_radius="0dp"
+                    app:rrbg_selectorAboveOfBottomLine="true"
+                    app:rrbg_selectorColor="#563f51b5"
+                    app:rrbg_selectorFullSize="true"
+                    app:rrbg_selectorSize="4dp">
+
+                    <co.ceryle.radiorealbutton.RadioRealButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:rrb_drawableHeight="48dp"
+                        app:rrb_drawableWidth="48dp"
+                        app:rrb_text="Theo ngày"
+                        app:rrb_textStyle="italic"
+                        app:rrb_textTypeface="serif"/>
+
+                    <co.ceryle.radiorealbutton.RadioRealButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:rrb_drawableHeight="36dp"
+                        app:rrb_drawableWidth="36dp"
+                        app:rrb_text="Theo tháng"
+                        app:rrb_textStyle="italic"
+                        app:rrb_textTypeface="serif"/>
+
+                    <co.ceryle.radiorealbutton.RadioRealButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:rrb_drawableHeight="24dp"
+                        app:rrb_drawableWidth="24dp"
+                        app:rrb_text="Theo năm"
+                        app:rrb_textStyle="italic"
+                        app:rrb_textTypeface="serif"/>
+                </co.ceryle.radiorealbutton.RadioRealButtonGroup>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/lnthangnam_overview"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/radiochedo_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        android:text="Tháng:"
+                        android:textSize="16sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:layout_weight="1"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/radiochedo_overview"
+                        android:id="@+id/spnthang_overview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight=".5"
+                        android:text="Năm: "
+                        android:textSize="16sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <Spinner
+                        android:layout_weight="1"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/radiochedo_overview"
+                        android:id="@+id/spnnam_overview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/lnngay_overview"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/radiochedo_overview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/btnchonngay_overview"
+                        android:textColor="#fff"
+                        android:text="Chọn ngày"
+                        android:gravity="center"
+                        android:background="@drawable/corner_dialog_camera"
+                        android:layout_weight="3"
+                        android:textSize="12sp"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_weight="1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+
+                        android:id="@+id/tvngaychon_overview"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:text="dd/mm/YYYY"
+                        android:layout_weight="6"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+            <Button
+                android:text="Thống kê"
+                android:textColor="#fff"
+                android:visibility="gone"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/btnthongke_overview"
+                android:layout_below="@id/rlchedo_overview"
+                android:background="@drawable/corner_dialog_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_below="@+id/btnthongke_overview"
+                android:id="@+id/rlpiechart"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:elevation="2dp"
+                android:background="@drawable/bg_white_corners">
+                <com.github.mikephil.charting.charts.PieChart
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:id="@+id/piechart"/>
+            </RelativeLayout>
+
+            <android.support.v4.widget.NestedScrollView
+                android:layout_below="@+id/rlpiechart"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/bg_white_corners"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rvloaihangpiechart_overview"
+                    android:layout_width="match_parent"
+                    android:elevation="2dp"
+                    android:layout_height="wrap_content"/>
+            </android.support.v4.widget.NestedScrollView>
+
+        </RelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

@@ -26,6 +26,7 @@ import leu.doan_datdoan.fragment.cuahang.CuaHang_MatHangFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_NhapHangFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_ThongTinCuaHangFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_TrangChuFragment;
+import leu.doan_datdoan.fragment.cuahang.Overview;
 import leu.doan_datdoan.model.CuaHang;
 import leu.doan_datdoan.network.RetrofitFactory;
 import leu.doan_datdoan.network.taikhoan.TaiKhoanService;
@@ -205,6 +206,16 @@ public class CuaHangActivity extends AppCompatActivity
             fragmentTransaction.commit();
         }else if(id == R.id.nav_cuahang_thoat){
             finish();
+        }else if (id == R.id.nav_cuahang_overview) {
+            Overview overview = new Overview();
+
+            Bundle bundle = new Bundle();
+            bundle.putSerializable(KEY_BUNDLE_CUAHANG,cuaHang);
+            overview.setArguments(bundle);
+
+            FragmentTransaction fragmentTransaction = manager.beginTransaction();
+            fragmentTransaction.replace(R.id.rl_cuahang_nav_for_fragment,overview);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

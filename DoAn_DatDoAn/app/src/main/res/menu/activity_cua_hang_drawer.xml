@@ -15,6 +15,10 @@
             android:id="@+id/nav_cuahang_nhaphang"
             android:icon="@drawable/ic_view_list_primary_24dp"
             android:title="Nhập hàng" />
+        <item
+            android:id="@+id/nav_cuahang_overview"
+            android:icon="@drawable/ic_show_chart_black_24dp"
+            android:title="Thống kê" />
 
         <item
             android:id="@+id/nav_cuahang_thoat"

@@ -24,7 +24,7 @@
                 android:id="@+id/rltinhkhoangcach_khachhang_xemchitietcuahangfragment"
                 android:background="#fff"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="300dp">
 
                 <ImageView
                     android:id="@+id/ivcuahang_khachhang_xemchitietcuahangfragment"
@@ -77,31 +77,31 @@
                     android:layout_width="90dp"
                     android:layout_height="25dp" />
 
-                <LinearLayout
-                    android:id="@+id/lnlhoatdongcuahang_khachhang_xemchitiethangfragment"
-                    android:background="@drawable/corner_phigiaohang"
-                    android:padding="10dp"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:layout_below="@+id/tvhoatdongcuahang_khachhang_xemchitietcuahangfragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:text="Phí Giao Hàng"
-                        android:textSize="12sp"
-                        android:gravity="center"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                    <TextView
-                        android:id="@+id/tvphigiaohang_khachhang_xemchitietcuahangfragment"
-                        android:text="Phí Giao Hàng"
-                        android:layout_marginTop="5dp"
-                        android:textSize="18sp"
-                        android:gravity="center"
-                        android:textColor="#000"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-                </LinearLayout>
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/lnlhoatdongcuahang_khachhang_xemchitiethangfragment"-->
+                    <!--android:background="@drawable/corner_phigiaohang"-->
+                    <!--android:padding="10dp"-->
+                    <!--android:gravity="center"-->
+                    <!--android:orientation="vertical"-->
+                    <!--android:layout_below="@+id/tvhoatdongcuahang_khachhang_xemchitietcuahangfragment"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content">-->
+                    <!--<TextView-->
+                        <!--android:text="Phí Giao Hàng"-->
+                        <!--android:textSize="12sp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/tvphigiaohang_khachhang_xemchitietcuahangfragment"-->
+                        <!--android:text="Phí Giao Hàng"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--android:textSize="18sp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textColor="#000"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content" />-->
+                <!--</LinearLayout>-->
 
             </RelativeLayout>
 
@@ -110,11 +110,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#fff"
-                android:tag="sticky" />
+               />
 
             <TextView
                 android:layout_width="match_parent"
-
                 android:layout_height="1dp"
                 android:background="#95313335" />
 

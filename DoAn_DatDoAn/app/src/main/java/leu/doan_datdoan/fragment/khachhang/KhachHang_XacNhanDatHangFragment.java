@@ -159,6 +159,7 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
     private SharedPreferences.Editor editor;
     private boolean flagStopTrack = false;
     private double khoangCach;
+    private Activity activity;
 
     public KhachHang_XacNhanDatHangFragment() {
         // Required empty public constructor
@@ -169,6 +170,10 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
         rlXacNhanDatHang.setVisibility(View.GONE);
 
         ktraThongTin();
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 
     private void ktraThongTin() {
@@ -183,12 +188,12 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
             edTenNguoiDat.setError("Thiếu");
             flag = false;
         }
-        if (tienShipper == 0) {
-            flag = false;
-            Toast.makeText(getActivity(), "Vui lòng bật GPS", Toast.LENGTH_SHORT).show();
-        }
+//        if (tienShipper == 0) {
+//            flag = false;
+//            Toast.makeText(getActivity(), "Vui lòng bật GPS", Toast.LENGTH_SHORT).show();
+//        }
         if (flag) {
-            ((XemCuaHangActivity)getActivity()).showDialog();
+            ((XemCuaHangActivity)activity).showDialog();
             donHang.setDiaChi(tvDiaChiNguoiDat.getText().toString());
             donHang.setGhiChu(edGhiChu.getText().toString());
             donHang.setGiaHang(giaHang);
@@ -215,7 +220,7 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
                             ((XemCuaHangActivity)getActivity()).dissmissDialog();
                             getActivity().finish();
                         }else{
-                            ((XemCuaHangActivity)getActivity()).dissmissDialog();
+                            ((XemCuaHangActivity)activity).dissmissDialog();
                             rlXacNhanDatHang.setVisibility(View.VISIBLE);
 
                             Toast.makeText(getContext(),"Lỗi " + response.code(),Toast.LENGTH_SHORT).show();
@@ -228,6 +233,8 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
                         Toast.makeText(getContext(),"Lỗi" ,Toast.LENGTH_SHORT).show();
                     }
                 });
+        }else{
+            rlXacNhanDatHang.setVisibility(View.VISIBLE);
         }
     }
 
@@ -248,7 +255,9 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
         sharedPreferences = getActivity().getSharedPreferences("SHARE_ACCOUNT", Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
 
-
+        manager = (LocationManager) activity.getSystemService(Context.LOCATION_SERVICE);
+        supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map_khachhang_xacnhandathangfragment);
+        supportMapFragment.getMapAsync(this);
         setupUI(v);
 
         if (!EventBus.getDefault().isRegistered(this)) {
@@ -300,8 +309,7 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
         }
 
 
-        supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map_khachhang_xacnhandathangfragment);
-        supportMapFragment.getMapAsync(this);
+
         ((XemCuaHangActivity) getActivity()).dissmissDialog();
 
     }
@@ -349,15 +357,15 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
 
     private void setTien() {
         if (giaHang != 0 && tienShipper != 0) {
-            tongGia = giaHang + tienShipper;
             tvTienHang.setText("Tổng tiền hàng: " + Util.formatConcurrency(giaHang) + " đ");
-            tvTongTien.setText("Tổng tiền phải trả: " + Util.formatConcurrency(tongGia) + " đ");
-            tvPhiVanChuyen.setText(" Phí vận chuyển: " + tienShipper + " đ");
+//            tvTongTien.setText("Tổng tiền phải trả: " + Util.formatConcurrency(tongGia) + " đ");
+//            tvPhiVanChuyen.setText(" Phí vận chuyển: " + tienShipper + " đ");
         }
     }
 
     @Subscribe(sticky = true)
     public void onReceiveTracker(OnGpsTracker onGpsTracker) {
+
         if (!flagStopTrack && map != null) {
             myLocation = onGpsTracker.getLocation();
 
@@ -464,6 +472,7 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Log.d("a123a","map");
 
         map = googleMap;
 
@@ -583,7 +592,6 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
     public void onPlacePickerEvent(KhachHang_OnPlacePickerEvent khachHang_onPlacePickerEvent) {
 
         Place place = khachHang_onPlacePickerEvent.getPlace();
-        Log.d("a123a", (place != null) + " 1");
 
         if (place != null) {
             tvDiaChiNguoiDat.setText(place.getAddress());
@@ -602,10 +610,10 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
         switch (v.getId()) {
             case R.id.ivcong: {
                 ((HangDat) hangDatsForRv.get(position)).setSoluong(hangDat.getSoluong() + 1);
-                hangDats.get(position).setSoluong(hangDat.getSoluong() + 1);
                 adapter.notifyItemChanged(position);
                 soPhan += 1;
-                tongGia += hangDat.getMatHang().getGia();
+                giaHang += hangDat.getMatHang().getGia();
+                tvTienHang.setText("Tổng tiền hàng: " + Util.formatConcurrency(giaHang) + " đ");
                 break;
             }
             case R.id.ivtru: {
@@ -622,10 +630,10 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
                     alert.show();
                 } else {
                     ((HangDat) hangDatsForRv.get(position)).setSoluong(hangDat.getSoluong() - 1);
-                    hangDats.get(position).setSoluong(hangDat.getSoluong() - 1);
                     adapter.notifyItemChanged(position);
                     soPhan -= 1;
                     tongGia -= hangDat.getMatHang().getGia();
+                    tvTienHang.setText(tongGia);
                 }
                 break;
             }

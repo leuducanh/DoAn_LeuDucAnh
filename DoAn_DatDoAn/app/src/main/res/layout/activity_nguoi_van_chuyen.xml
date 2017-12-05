@@ -70,10 +70,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
 
-
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
+                    android:id="@+id/tvdccuahang_nvc"
+                    android:text="Địa chỉ cửa hàng"
+                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:textStyle="bold"
+                    android:textColor="#000"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
                 <ImageView
-                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:layout_below="@+id/tvdccuahang_nvc"
                     android:layout_alignLeft="@+id/ivreddot"
                     android:layout_alignTop="@+id/tvden_nvcfragment"
                     android:id="@+id/ivgreendot"
@@ -87,8 +97,8 @@
                     android:id="@+id/tvden_nvcfragment"
                     android:layout_marginTop="10dp"
                     android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
-                    android:text="ĐẾN"
-                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:text="Giao hàng đến địa chỉ:"
+                    android:layout_below="@+id/tvdccuahang_nvc"
                     android:textColor="#8a545252"
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
@@ -97,10 +107,10 @@
 
                 <TextView
                     android:id="@+id/tvdiachinguoidat_nvc"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="5dp"
                     android:layout_alignLeft="@+id/tvnguoidat_nvcfragment"
                     android:text="Địa chỉ người đặt"
-                    android:layout_below="@+id/tvtencuahang_nvc"
+                    android:layout_below="@+id/tvden_nvcfragment"
                     android:textStyle="bold"
                     android:textColor="#000"
                     android:textSize="16sp"
@@ -177,7 +187,6 @@
             </RelativeLayout>
 
             <TextView
-                android:text="Abc"
                 android:padding="5dp"
                 android:id="@+id/tvtienship_nvc"
                 android:layout_marginTop="20dp"
@@ -187,7 +196,6 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:text="Abc"
                 android:padding="5dp"
                 android:id="@+id/tvtongtien_nvc"
                 android:layout_marginTop="5dp"

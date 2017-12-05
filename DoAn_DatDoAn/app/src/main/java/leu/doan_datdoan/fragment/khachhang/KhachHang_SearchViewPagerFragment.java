@@ -90,8 +90,6 @@ public class KhachHang_SearchViewPagerFragment extends Fragment implements Fragm
                 .subscribe(query->{
                     searchString = query;
                     searchCuaHang(query);
-                    Log.d("123abc","on next" + query +  " " + call);
-
                 });
 
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
@@ -99,7 +97,6 @@ public class KhachHang_SearchViewPagerFragment extends Fragment implements Fragm
             public void onSearchViewShown() {
                 //Do some magic7
 
-                Log.d("12345","show");
                 searchView.setContentDescription(searchString);
             }
 
@@ -115,25 +112,23 @@ public class KhachHang_SearchViewPagerFragment extends Fragment implements Fragm
         iv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("12345","click");
 
                 iv.setVisibility(View.GONE);
                 searchView.showSearch();
             }
         });
-        Log.d("abcde"," " );
 
-        RetrofitFactory.getInstance().createService(CuaHangService.class).layCuaHangTheoTen("Vịt nướng").enqueue(new Callback<List<CuaHang>>() {
-            @Override
-            public void onResponse(Call<List<CuaHang>> call, Response<List<CuaHang>> response) {
-                    Log.d("abcde",response.body().size()+" " +response.code() + " " + response.message() );
-            }
-
-            @Override
-            public void onFailure(Call<List<CuaHang>> call, Throwable t) {
-
-            }
-        });
+//        RetrofitFactory.getInstance().createService(CuaHangService.class).layCuaHangTheoTen("Vịt nướng").enqueue(new Callback<List<CuaHang>>() {
+//            @Override
+//            public void onResponse(Call<List<CuaHang>> call, Response<List<CuaHang>> response) {
+//                    Log.d("abcde",response.body().size()+" " +response.code() + " " + response.message() );
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<CuaHang>> call, Throwable t) {
+//
+//            }
+//        });
     }
 
     public Observable<String> fromSearchView(@NonNull final MaterialSearchView searchView) {
