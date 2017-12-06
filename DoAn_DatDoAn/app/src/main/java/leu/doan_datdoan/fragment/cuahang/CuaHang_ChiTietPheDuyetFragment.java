@@ -59,9 +59,8 @@ import retrofit2.Response;
 public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapReadyCallback {
     public static final String DONHANG_PHEDUYET = "Phê duyệt";
     public static final String DONHANG_CHOPHEDUYET = "Đang chờ phê duyệt";
-    public static final String DONHANG_DATIMDCSHIP = "Đã tìm được ship";
-    public static final String DONHANG_DANGSHIP = "Đang ship";
-    public static final String DONHANG_DAXONG = "Đã xong";
+    public static final String DONHANG_GIAOHANG = "Đang giao hàng";
+    public static final String DONHANG_HOANTHANH = "Đã xong";
 
     @BindView(R.id.ivtran_cuahang_chitietpheduyetfragment)
     ImageView ivTran;
@@ -77,28 +76,32 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     ImageView ivGoiDien;
     @BindView(R.id.tvghichu_cuahang_chitietpheduyetfragment)
     TextView tvGhiChu;
-    @BindView(R.id.tvtienhang_cuahang_chitietpheduyetfragment)
-    TextView tvTienHang;
-    @BindView(R.id.tvtienvanchuyen_cuahang_chitietpheduyetfragment)
-    TextView tvTienVanChuyen;
+    //    @BindView(R.id.tvtienhang_cuahang_chitietpheduyetfragment)
+//    TextView tvTienHang;
+//    @BindView(R.id.tvtienvanchuyen_cuahang_chitietpheduyetfragment)
+//    TextView tvTienVanChuyen;
     @BindView(R.id.tvtongtien_cuahang_chitietpheduyetfragment)
     TextView tvTongTien;
     @BindView(R.id.btnpheduyet_cuahang_chitietpheduyetfragment)
     Button btnPheDuyet;
+    @BindView(R.id.btnhoanthanh_cuahang_chitietpheduyetfragment)
+    Button btnHoanThanh;
+    //    @BindView(R.id.btnbatdaugiao_cuahang_chitietpheduyetfragment)
+//    Button btnBatDauGiaoHang;
+//    @BindView(R.id.btn_tim_cuahang_chitietpheduyetfragment)
+//    Button btnTimShipper;
+//    @BindView(R.id.btnhuy_cuahang_chitietpheduyetfragment)
+//    Button btnHuyShip;
     @BindView(R.id.btnbatdaugiao_cuahang_chitietpheduyetfragment)
-    Button btnBatDauGiaoHang;
-    @BindView(R.id.btn_tim_cuahang_chitietpheduyetfragment)
-    Button btnTimShipper;
-    @BindView(R.id.btnhuy_cuahang_chitietpheduyetfragment)
-    Button btnHuyShip;
+    Button btnGiaoHang;
     @BindView(R.id.btnhuydon_cuahang_chitietpheduyetfragment)
     Button btnHuyDon;
     @BindView(R.id.rvhangdat_chitietpheduyetfragment)
     RecyclerView recyclerView;
     @BindView(R.id.nsvmain_cuahang_chitietpheduyetfragment)
     NestedScrollView nsv;
-    @BindView(R.id.tvbiensoxe_cuahang_chitietpheduyetfragment)
-    TextView tvBienSo;
+//    @BindView(R.id.tvbiensoxe_cuahang_chitietpheduyetfragment)
+//    TextView tvBienSo;
     @BindView(R.id.tvsdtvanchuyen_cuahang_chitietpheduyetfragment)
     TextView tvSdtVanChuyen;
     @BindView(R.id.ivgoidienvanchuyen_cuahang_chitietpheduyetfragment)
@@ -128,7 +131,7 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     private static final int PERMISSIONS_REQUEST_PHONE = 123;
 
     @OnClick(R.id.ivgoidienvanchuyen_cuahang_chitietpheduyetfragment)
-    public void onClickGoiDienVanChuyen(){
+    public void onClickGoiDienVanChuyen() {
         if (ContextCompat.checkSelfPermission(this.getActivity().getApplicationContext(),
                 Manifest.permission.CALL_PHONE)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -162,16 +165,17 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     public void onClickPheDuyetDonHang() {
         ((CuaHangActivity) activity).showingDialog();
         donHang.setTrangThai(DONHANG_PHEDUYET);
-        RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(),donHang ).enqueue(new Callback<ResponseBody>() {
+        RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(), donHang).enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
 
                     btnPheDuyet.setVisibility(View.GONE);
                     btnHuyDon.setVisibility(View.GONE);
-                    btnBatDauGiaoHang.setVisibility(View.GONE);
-                    btnHuyShip.setVisibility(View.GONE);
-                    btnTimShipper.setVisibility(View.VISIBLE);
+//                    btnBatDauGiaoHang.setVisibility(View.GONE);
+//                    btnHuyShip.setVisibility(View.GONE);
+//                    btnTimShipper.setVisibility(View.VISIBLE);
+                    btnGiaoHang.setVisibility(View.VISIBLE);
 
                     ((CuaHangActivity) activity).dismissingDialog();
                 } else {
@@ -272,49 +276,61 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
         tvSdt.setText(donHang.getSdt());
         tvTenCuaHang.setText(cuaHang.getTen());
 
-        tvTienHang.setText(Util.formatConcurrency(donHang.getGiaHang()) + " đ");
-        tvTienVanChuyen.setText(Util.formatConcurrency(donHang.getGiaVanChuyen()) + " đ");
+//        tvTienHang.setText(Util.formatConcurrency(donHang.getGiaHang()) + " đ");
+//        tvTienVanChuyen.setText(Util.formatConcurrency(donHang.getGiaVanChuyen()) + " đ");
         tvTongTien.setText(Util.formatConcurrency(donHang.getGiaHang() + donHang.getGiaVanChuyen()) + " đ");
 
         if (donHang.getTrangThai().equals(DONHANG_CHOPHEDUYET)) {
             setViewChoPheDuyet();
         } else if (donHang.getTrangThai().equals(DONHANG_PHEDUYET)) {
-            setViewChoPheDuyet();
-        } else if (donHang.getTrangThai().equals(DONHANG_DATIMDCSHIP)){
-            setViewTimDuocShiper();
-        } else if (donHang.getTrangThai().equals(DONHANG_DANGSHIP)){
-            setViewShipLayHang();
+            setViewPheDuyet();
+        } else if (donHang.getTrangThai().equals(DONHANG_GIAOHANG)) {
+            setViewChuanBiShip();
+        } else if (donHang.getTrangThai().equals(DONHANG_HOANTHANH)) {
+            setViewDaXong();
         }
 
         EventBus.getDefault().removeStickyEvent(cuaHang_onClickChiTietPheDuyetMatHang);
     }
 
-    public void setGoneTatCaCacView(){
-        btnBatDauGiaoHang.setVisibility(View.GONE);
-        btnHuyShip.setVisibility(View.GONE);
-        btnTimShipper.setVisibility(View.GONE);
+    public void setGoneTatCaCacView() {
+//        btnBatDauGiaoHang.setVisibility(View.GONE);
+//        btnHuyShip.setVisibility(View.GONE);
+//        btnTimShipper.setVisibility(View.GONE);
         btnPheDuyet.setVisibility(View.GONE);
         btnHuyDon.setVisibility(View.GONE);
+        btnGiaoHang.setVisibility(View.GONE);
+        btnHoanThanh.setVisibility(View.GONE);
         rl3.setVisibility(View.GONE);
     }
 
-    public void setViewChoPheDuyet(){
-      setGoneTatCaCacView();
+    public void setViewChoPheDuyet() {
+        setGoneTatCaCacView();
         btnPheDuyet.setVisibility(View.VISIBLE);
         btnHuyDon.setVisibility(View.VISIBLE);
     }
-    public void setViewPheDuyet(){
+
+    public void setViewPheDuyet() {
         setGoneTatCaCacView();
-        btnTimShipper.setVisibility(View.VISIBLE);
+//        btnTimShipper.setVisibility(View.VISIBLE);
+        btnGiaoHang.setVisibility(View.VISIBLE);
     }
-    public void setViewTimDuocShiper(){
+
+    public void setViewChuanBiShip() {
         setGoneTatCaCacView();
-        btnBatDauGiaoHang.setVisibility(View.VISIBLE);
-        btnHuyShip.setVisibility(View.VISIBLE);
+//        btnBatDauGiaoHang.setVisibility(View.VISIBLE);
+//        btnHuyShip.setVisibility(View.VISIBLE);
+        rl3.setVisibility(View.VISIBLE);
+        btnHoanThanh.setVisibility(View.VISIBLE);
     }
-    public void setViewShipLayHang(){
+
+    public void setViewDaXong() {
         setGoneTatCaCacView();
+        rl3.setVisibility(View.VISIBLE);
     }
+//    public void setViewShipLayHang(){
+//        setGoneTatCaCacView();
+//    }
 
     private void updateCamera() {
 

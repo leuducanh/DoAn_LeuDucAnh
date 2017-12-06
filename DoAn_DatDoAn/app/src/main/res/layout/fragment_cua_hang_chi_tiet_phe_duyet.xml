@@ -191,55 +191,55 @@
                     android:textSize="14sp" />
             </ScrollView>
 
-            <TextView
-                android:id="@+id/tv1_cuahang_chitietpheduyetfragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/sv_cuahang_chitietpheduyetfragment"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Tiền hàng: "
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv1_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/sv_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Tiền hàng: "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/tvtienhang_cuahang_chitietpheduyetfragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv1_cuahang_chitietpheduyetfragment"
-                android:layout_toRightOf="@+id/tv1_cuahang_chitietpheduyetfragment"
-                android:text="12345"
-                android:textColor="#8a545252"
-                android:textSize="16sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvtienhang_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignTop="@+id/tv1_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_toRightOf="@+id/tv1_cuahang_chitietpheduyetfragment"-->
+                <!--android:text="12345"-->
+                <!--android:textColor="#8a545252"-->
+                <!--android:textSize="16sp" />-->
 
-            <TextView
-                android:id="@+id/tv2_cuahang_chitietpheduyetfragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/tv1_cuahang_chitietpheduyetfragment"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
-                android:text="Tiền ship: "
-                android:textColor="#000"
-                android:textSize="16sp"
-                android:textStyle="bold" />
+            <!--<TextView-->
+                <!--android:id="@+id/tv2_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@id/tv1_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:text="Tiền ship: "-->
+                <!--android:textColor="#000"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textStyle="bold" />-->
 
-            <TextView
-                android:id="@+id/tvtienvanchuyen_cuahang_chitietpheduyetfragment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/tv2_cuahang_chitietpheduyetfragment"
-                android:layout_toRightOf="@+id/tv2_cuahang_chitietpheduyetfragment"
-                android:text="12345"
-                android:textColor="#8a545252"
-                android:textSize="16sp" />
+            <!--<TextView-->
+                <!--android:id="@+id/tvtienvanchuyen_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_alignTop="@+id/tv2_cuahang_chitietpheduyetfragment"-->
+                <!--android:layout_toRightOf="@+id/tv2_cuahang_chitietpheduyetfragment"-->
+                <!--android:text="12345"-->
+                <!--android:textColor="#8a545252"-->
+                <!--android:textSize="16sp" />-->
 
             <TextView
                 android:id="@+id/tv3_cuahang_chitietpheduyetfragment"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv2_cuahang_chitietpheduyetfragment"
+                android:layout_below="@id/sv_cuahang_chitietpheduyetfragment"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:text="Tổng tiền: "
@@ -266,27 +266,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <TextView
-                    android:text="Biển số xe: "
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"
-                    android:id="@+id/tv4_cuahang_chitietpheduyetfragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true" />
-                <TextView
-                    android:textColor="#ffffff"
-                    android:textSize="16sp"
-                    android:layout_alignTop="@id/tv4_cuahang_chitietpheduyetfragment"
-                    android:layout_toRightOf="@id/tv4_cuahang_chitietpheduyetfragment"
-                    android:id="@+id/tvbiensoxe_cuahang_chitietpheduyetfragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true" />
+                <!--<TextView-->
+                    <!--android:text="Biển số xe: "-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:id="@+id/tv4_cuahang_chitietpheduyetfragment"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentStart="true" />-->
+                <!--<TextView-->
+                    <!--android:textColor="#ffffff"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:layout_alignTop="@id/tv4_cuahang_chitietpheduyetfragment"-->
+                    <!--android:layout_toRightOf="@id/tv4_cuahang_chitietpheduyetfragment"-->
+                    <!--android:id="@+id/tvbiensoxe_cuahang_chitietpheduyetfragment"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentStart="true" />-->
 
                 <TextView
-                    android:layout_marginTop="30dp"
-                    android:text="Số điện thoại: "
+                    android:text="Số điện thoại người vận chuyển: "
                     android:textColor="#ffffff"
                     android:textSize="16sp"
                     android:id="@+id/tv5_cuahang_chitietpheduyetfragment"
@@ -296,12 +295,12 @@
                 <TextView
                     android:textColor="#ffffff"
                     android:textSize="16sp"
-                    android:layout_alignTop="@id/tv5_cuahang_chitietpheduyetfragment"
-                    android:layout_toRightOf="@id/tv5_cuahang_chitietpheduyetfragment"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_below="@+id/tv5_cuahang_chitietpheduyetfragment"
                     android:id="@+id/tvsdtvanchuyen_cuahang_chitietpheduyetfragment"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true" />
+                    android:layout_height="wrap_content" />
                 <ImageView
                     android:id="@+id/ivgoidienvanchuyen_cuahang_chitietpheduyetfragment"
                     android:layout_width="50dp"
@@ -348,21 +347,22 @@
                     android:textColor="#fff"
                     android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/btn_tim_cuahang_chitietpheduyetfragment"
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/ripple_button"
-                    android:gravity="center"
-                    android:padding="20dp"
-                    android:text="Tìm ship"
-                    android:textColor="#fff"
-                    android:textSize="14sp" />
+                <!--<Button-->
+                    <!--android:id="@+id/btn_tim_cuahang_chitietpheduyetfragment"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="0dp"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/ripple_button"-->
+                    <!--android:gravity="center"-->
+                    <!--android:padding="20dp"-->
+                    <!--android:text="Tìm ship"-->
+                    <!--android:textColor="#fff"-->
+                    <!--android:textSize="14sp" />-->
 
                 <Button
-                    android:id="@+id/btnhuy_cuahang_chitietpheduyetfragment"
+                    android:visibility="gone"
+                    android:id="@+id/btnhoanthanh_cuahang_chitietpheduyetfragment"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
@@ -370,13 +370,13 @@
                     android:background="@drawable/ripple_button"
                     android:gravity="center"
                     android:padding="20dp"
-                    android:text="Hủy ship"
+                    android:text="Hoàn thành"
                     android:textColor="#fff"
                     android:textSize="14sp" />
 
                 <Button
                     android:id="@+id/btnbatdaugiao_cuahang_chitietpheduyetfragment"
-
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="0dp"
                     android:layout_marginTop="10dp"
@@ -384,7 +384,7 @@
                     android:background="@drawable/ripple_button"
                     android:gravity="center"
                     android:padding="20dp"
-                    android:text="Đã giao cho ship"
+                    android:text="Giao cho ship"
                     android:textColor="#fff"
                     android:textSize="14sp" />
             </LinearLayout>

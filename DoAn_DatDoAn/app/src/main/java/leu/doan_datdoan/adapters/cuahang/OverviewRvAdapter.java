@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieEntry;
+import com.github.mikephil.charting.formatter.PercentFormatter;
 
 import java.text.NumberFormat;
 import java.util.Currency;
@@ -47,7 +48,7 @@ public class OverviewRvAdapter extends RecyclerView.Adapter<OverviewRvAdapter.Ov
 
     @Override
     public void onBindViewHolder(OverviewRvViewholder holder, int position) {
-        holder.setData(pieData.getDataSet().getEntryForIndex(position),pieData.getDataSet().getEntryForIndex(position).getY(),pieData.getDataSet().getColor(position));
+        holder.setData(pieData.getDataSet().getEntryForIndex(position),pieData.getYValueSum(),pieData.getDataSet().getColor(position));
     }
 
     @Override
@@ -71,7 +72,7 @@ public class OverviewRvAdapter extends RecyclerView.Adapter<OverviewRvAdapter.Ov
             this.itemView = itemView;
         }
 
-        public void setData(PieEntry entryForIndex,float percen,int color){
+        public void setData(PieEntry entryForIndex,float sum,int color){
             tvLoaiHang.setText(entryForIndex.getLabel());
 
             Locale locale = new Locale("da", "DK");
@@ -85,7 +86,8 @@ public class OverviewRvAdapter extends RecyclerView.Adapter<OverviewRvAdapter.Ov
             mDrawable.setColorFilter(new
                     PorterDuffColorFilter(color, PorterDuff.Mode.MULTIPLY));
             tvPercent.setBackground(mDrawable);
-            tvPercent.setText(percen + "%");
+
+            tvPercent.setText((float)Math.round(entryForIndex.getY()/(sum)*1000)/10 + "%");
         }
     }
 }

@@ -194,8 +194,11 @@
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:elevation="2dp"
-                android:background="@drawable/bg_white_corners">
+                android:elevation="2dp">
+                <!--<ImageView-->
+                    <!--android:id="@+id/imgtouch_overview"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent" />-->
                 <com.github.mikephil.charting.charts.PieChart
                     android:layout_height="match_parent"
                     android:layout_width="match_parent"
@@ -203,6 +206,7 @@
             </RelativeLayout>
 
             <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nsvloaihangpiechart"
                 android:layout_below="@+id/rlpiechart"
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="3dp"
@@ -218,6 +222,15 @@
                     android:layout_height="wrap_content"/>
             </android.support.v4.widget.NestedScrollView>
 
+
+            <com.github.mikephil.charting.charts.BarChart
+
+                android:elevation="2dp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/nsvloaihangpiechart"
+                android:id="@+id/barcharmathang_overview"
+                android:layout_width="match_parent"
+                android:layout_height="280dp" />
         </RelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 

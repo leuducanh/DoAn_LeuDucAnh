@@ -2,27 +2,39 @@ package leu.doan_datdoan.fragment.cuahang;
 
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.animation.Easing;
+import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.BarData;
+import com.github.mikephil.charting.data.BarDataSet;
+import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -51,6 +63,7 @@ import leu.doan_datdoan.model.ThongKeLoaiHang;
 import leu.doan_datdoan.model.ThongKeMatHang;
 import leu.doan_datdoan.network.RetrofitFactory;
 import leu.doan_datdoan.network.cuahang.CuaHangService;
+import leu.doan_datdoan.utils.LabelFormatter;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -63,6 +76,8 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
 
     @BindView(R.id.piechart)
     PieChart pieChart;
+    @BindView(R.id.rlpiechart)
+    RelativeLayout rlPieChart;
 
     @BindView(R.id.rvloaihangpiechart_overview)
     RecyclerView rvMoney;
@@ -84,6 +99,10 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
     TextView tvNgayChon;
     @BindView(R.id.nsv_cuahang_overview)
     NestedScrollView nsv;
+    @BindView(R.id.barcharmathang_overview)
+    BarChart barChart;
+//    @BindView(R.id.imgtouch_overview)
+//    ImageView img;
 
     private ArrayAdapter<Integer> dataAdapter1;
     private ArrayAdapter<Integer> dataAdapter;
@@ -98,6 +117,8 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
     private int cheDo = 0;
     private int currentYear;
     private ThongKe thongKe;
+    private ArrayList<Integer> colors;
+    private ArrayList<String> labels;
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
@@ -126,6 +147,7 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
         View v = inflater.inflate(R.layout.fragment_overview, container, false);
         textViewArrayList = new ArrayList<>();
         thongKeLoaiHangs = new ArrayList<>();
+        labels = new ArrayList<>();
         cuaHang = (CuaHang) getArguments().getSerializable(CuaHangActivity.KEY_BUNDLE_CUAHANG);
         setupUI(v);
         addEvents();
@@ -135,6 +157,12 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
     }
 
     private void addEvents() {
+        nsv.requestDisallowInterceptTouchEvent(true);
+        rlPieChart.requestDisallowInterceptTouchEvent(true);
+
+
+
+
         radioGroup.setFocusable(false);
         radioGroup.setOnPositionChangedListener(new RadioRealButtonGroup.OnPositionChangedListener() {
             @Override
@@ -186,6 +214,27 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
 
     private void setupUI(View v) {
         ButterKnife.bind(this, v);
+
+
+        colors = new ArrayList<>();
+
+        for (int c : ColorTemplate.JOYFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.COLORFUL_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.VORDIPLOM_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.LIBERTY_COLORS)
+            colors.add(c);
+
+        for (int c : ColorTemplate.PASTEL_COLORS)
+            colors.add(c);
+
+        colors.add(ColorTemplate.getHoloBlue());
+
         Date currentTime = Calendar.getInstance().getTime();
 
         ngay = currentTime.getDate();
@@ -268,6 +317,7 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
                     thongKeLoaiHangs = response.body().getThongKeLoaiHangs();
                     thongKeMatHangs = response.body().getThongKeMatHangs();
                     drawPieChart();
+                    drawBarChart();
                 }else{
                     showM("Lỗi");
                 }
@@ -287,9 +337,66 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
     public void clearPieChart() {
         pieChart.clear();
     }
+    public void clearBarChart(){
+        barChart.clear();
+    }
+
+    public void drawBarChart(){
+        clearBarChart();
+
+        if(thongKeMatHangs.size() > 0){
+            Log.d("abcde","123a");
+            List<BarEntry> entries = convertToListBarEntry();
+
+            Description description = new Description();
+            description.setText("");
+            description.setTextSize(12);
+            description.setTextAlign(Paint.Align.RIGHT);
+            barChart.setDescription(description);
+
+            BarDataSet set = new BarDataSet(entries,"Thống kê mặt hàng");
+            set.setValueTextColor(Color.BLACK);
+            set.setColors(colors);
+            BarData data = new BarData(set);
+            data.setBarWidth(0.9f);
+            barChart.getXAxis().setValueFormatter(new LabelFormatter(labels));
+            barChart.setData(data);
+            barChart.setFitBars(true);
+
+            XAxis xAxis = barChart.getXAxis();
+            YAxis yAxisL = barChart.getAxisLeft();
+            YAxis yAxisR = barChart.getAxisRight();
+
+            xAxis.setGranularity(1f);
+            xAxis.setGranularityEnabled(true);
+            xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+            xAxis.setTextSize(4);
+            xAxis.setDrawGridLines(false);
+            yAxisR.setDrawGridLines(false);
+            yAxisR.setDrawAxisLine(false);
+            yAxisR.setDrawLabels(false);
+            barChart.setDoubleTapToZoomEnabled(false);
+            barChart.setPinchZoom(true);
+            barChart.invalidate();
+        }
+    }
+
+    private List<BarEntry> convertToListBarEntry() {
+        List<BarEntry> barEntries = new ArrayList<>();
+        labels.clear();
+
+        float i = 0f;
+        for(ThongKeMatHang tk : thongKeMatHangs){
+            barEntries.add(new BarEntry(i,tk.getSoLuong()));
+            labels.add(tk.getMatHang());
+            i++;
+        }
+
+        return barEntries;
+
+    }
 
     public void drawPieChart() {
-
         clearPieChart();
         if (thongKeLoaiHangs.size() > 0) {
 //            List<PieEntry> entries = convertToListPieEntry(thongKeLoaiHangs);
@@ -298,25 +405,6 @@ public class Overview extends Fragment implements DatePickerDialog.OnDateSetList
             PieDataSet pieDataSet = new PieDataSet(entries,"Loại hàng");
             pieDataSet.setSelectionShift(15f);
             pieDataSet.setSliceSpace(3f);
-
-            ArrayList<Integer> colors = new ArrayList<>();
-
-            for (int c : ColorTemplate.JOYFUL_COLORS)
-                colors.add(c);
-
-            for (int c : ColorTemplate.COLORFUL_COLORS)
-                colors.add(c);
-
-            for (int c : ColorTemplate.VORDIPLOM_COLORS)
-                colors.add(c);
-
-            for (int c : ColorTemplate.LIBERTY_COLORS)
-                colors.add(c);
-
-            for (int c : ColorTemplate.PASTEL_COLORS)
-                colors.add(c);
-
-            colors.add(ColorTemplate.getHoloBlue());
 
             pieDataSet.setValueTextColors(colors);
             pieDataSet.setValueLineWidth(.5f);

@@ -197,7 +197,7 @@ public class KhachHang_XacNhanDatHangFragment extends Fragment implements Google
             donHang.setDiaChi(tvDiaChiNguoiDat.getText().toString());
             donHang.setGhiChu(edGhiChu.getText().toString());
             donHang.setGiaHang(giaHang);
-            donHang.setGiaVanChuyen(tienShipper);
+            donHang.setGiaVanChuyen(0);
             donHang.setLat(myLocation.getLatitude());
             donHang.setLng(myLocation.getLongitude());
             donHang.setTenNguoiDat(edTenNguoiDat.getText().toString());

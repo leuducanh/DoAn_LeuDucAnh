@@ -40,6 +40,8 @@ public class CuaHang_TrangChuFragment extends Fragment {
     private Activity activity;
     private List<DonHang> donHangs;
     private List<DonHang> donHangPheDuyetList;
+    private List<DonHang> donHangDangShipList;
+    private List<DonHang> donHangHuyList;
     private List<DonHang> donHangLichSuList;
 
     public void setActivity(Activity activity) {
@@ -56,15 +58,12 @@ public class CuaHang_TrangChuFragment extends Fragment {
         cuaHang = (CuaHang) getArguments().getSerializable(CuaHangActivity.KEY_BUNDLE_CUAHANG);
         ((CuaHangActivity)activity).showingDialog();
 
-
-
         setupUI(v);
         return v;
     }
 
     private void setupUI(View v) {
         ButterKnife.bind(this, v);
-
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             private int currentPagePosition = 0;
