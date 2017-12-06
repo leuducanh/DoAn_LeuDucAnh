@@ -49,11 +49,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
+        android:layout_below="@+id/tvdiachi_cuahang_item_rvpheduyet"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/tvngaydat_cuahang_item_rvpheduyet"
+        android:textColor="#000"
+        android:layout_marginEnd="10dp"
+        android:textStyle="italic"
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="10dp"
         android:textStyle="italic"
         android:id="@+id/tvtrangthai_cuahang_itenrvpheduyet"
-        android:layout_below="@+id/tvdiachi_cuahang_item_rvpheduyet"
+        android:layout_below="@+id/tvngaydat_cuahang_item_rvpheduyet"
         android:text="Đang chờ phê duyệt"
         android:textColor="#2cff02"
         android:textSize="16sp"

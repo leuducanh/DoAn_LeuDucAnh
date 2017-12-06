@@ -30,7 +30,25 @@ public class DonHang implements Serializable {
     private String ghiChu;
     private String sdt;
     private Date ngayDat;
+    private String sdtShip;
+    private String ngay;
     private List<HangDat> hangDatList;
+
+    public String getNgay() {
+        return ngay;
+    }
+
+    public void setNgay(String ngay) {
+        this.ngay = ngay;
+    }
+
+    public String getSdtShip() {
+        return sdtShip;
+    }
+
+    public void setSdtShip(String sdtShip) {
+        this.sdtShip = sdtShip;
+    }
 
     public DonHang() {
         super();
@@ -44,9 +62,11 @@ public class DonHang implements Serializable {
 
 
 
-    public DonHang(int id, KhachHang khachHang, CuaHang cuaHang, double lat, double lng,
-                   String diaChi, int giaVanChuyen, int giaHang, String trangThai, String tenNguoiDat, String ghiChu,
-                   String sdt, Date ngayDat, List<HangDat> hangDatList) {
+
+
+    public DonHang(int id, KhachHang khachHang, CuaHang cuaHang, double lat, double lng, String diaChi,
+                   int giaVanChuyen, int giaHang, String trangThai, String tenNguoiDat, String ghiChu, String sdt,
+                   Date ngayDat, String sdtShip, List<HangDat> hangDatList) {
         super();
         this.id = id;
         this.khachHang = khachHang;
@@ -61,6 +81,7 @@ public class DonHang implements Serializable {
         this.ghiChu = ghiChu;
         this.sdt = sdt;
         this.ngayDat = ngayDat;
+        this.sdtShip = sdtShip;
         this.hangDatList = hangDatList;
     }
 

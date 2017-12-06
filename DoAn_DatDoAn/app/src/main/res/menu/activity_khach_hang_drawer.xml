@@ -6,6 +6,11 @@
             android:id="@+id/nav_khachhang_trangchu"
             android:icon="@drawable/ic_home_black_24dp"
             android:title="Trang Chủ" />
+        <item
+            android:id="@+id/nav_khachhang_donhang"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Đơn hàng"
+            />
 
     </group>
 

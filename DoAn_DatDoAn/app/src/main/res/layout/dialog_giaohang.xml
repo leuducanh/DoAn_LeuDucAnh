@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="20dp"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="3"
+            android:text="Sđt shipper: "
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edsdt_dialoggiaohang"
+            android:inputType="numberDecimal"
+            android:background="@drawable/border_edittext"
+            android:layout_weight="7"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_height="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="3"
+            android:text="Giá ship: "
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edgia_dialoggiaohang"
+            android:inputType="numberDecimal"
+            android:background="@drawable/border_edittext"
+            android:layout_weight="7"
+            android:textSize="18sp"
+            android:textColor="#000"
+            android:layout_width="0dp"
+            android:layout_height="20sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnbatdaugiao_dialoggiaohang"
+        android:padding="10sp"
+        android:background="@drawable/corner_dialog_camera"
+        android:textSize="14sp"
+        android:textColor="#fff"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Bắt đầu Giao Hàng"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

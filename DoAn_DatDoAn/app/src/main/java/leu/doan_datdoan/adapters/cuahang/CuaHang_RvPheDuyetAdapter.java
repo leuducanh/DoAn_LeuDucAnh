@@ -13,6 +13,8 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import leu.doan_datdoan.R;
+import leu.doan_datdoan.fragment.cuahang.CuaHang_ChiTietPheDuyetFragment;
+import leu.doan_datdoan.fragment.cuahang.CuaHang_PheDuyetFragment;
 import leu.doan_datdoan.model.DonHang;
 
 /**
@@ -64,7 +66,8 @@ public class CuaHang_RvPheDuyetAdapter extends RecyclerView.Adapter<CuaHang_RvPh
         TextView tvTenNguoiMua;
         @BindView(R.id.tvtrangthai_cuahang_itenrvpheduyet)
         TextView tvTrangThai;
-
+        @BindView(R.id.tvngaydat_cuahang_item_rvpheduyet)
+                TextView tvNgayDat;
         View view;
 
         public HolderDonHangRVPheDuyet(View itemView) {
@@ -78,7 +81,26 @@ public class CuaHang_RvPheDuyetAdapter extends RecyclerView.Adapter<CuaHang_RvPh
                 tvDiaChiNguoiMua.setText(data.getDiaChi());
                 tvTenNguoiMua.setText(data.getTenNguoiDat());
                 tvTrangThai.setText(data.getTrangThai());
-                if(!data.getTrangThai().equals("Đang chờ phê duyệt"))tvTrangThai.setTextColor(Color.BLUE);
+                tvNgayDat.setText(data.getNgay());
+                switch (data.getTrangThai()){
+                    case (CuaHang_ChiTietPheDuyetFragment.DONHANG_PHEDUYET):{
+                        tvTrangThai.setTextColor(Color.BLUE);
+                        break;
+                    }
+                    case (CuaHang_ChiTietPheDuyetFragment.DONHANG_GIAOHANG):{
+                        tvTrangThai.setTextColor(Color.RED);
+                        break;
+                    }
+                    case (CuaHang_ChiTietPheDuyetFragment.DONHANG_HOANTHANH):{
+                        tvTrangThai.setTextColor(Color.BLACK);
+                        break;
+                    }
+                    case (CuaHang_ChiTietPheDuyetFragment.DONHANG_CHOPHEDUYET):{
+                        tvTrangThai.setTextColor(Color.GREEN);
+                        break;
+                    }
+                }
+
                 addEvent();
             }
         }

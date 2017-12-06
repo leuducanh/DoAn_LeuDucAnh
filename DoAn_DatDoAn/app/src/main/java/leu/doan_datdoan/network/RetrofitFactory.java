@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitFactory {
     private static Retrofit retrofit;
-    public static String apiBaseUrl = "http://192.168.0.101:11850";
+    public static String apiBaseUrl = "http://192.168.0.101:14915";
     private static RetrofitFactory retrofitFactory = new RetrofitFactory();
     private static OkHttpClient.Builder httpbuilder = new OkHttpClient.Builder();
 

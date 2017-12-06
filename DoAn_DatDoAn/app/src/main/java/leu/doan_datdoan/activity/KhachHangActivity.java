@@ -24,6 +24,7 @@ import org.greenrobot.eventbus.Subscribe;
 
 import butterknife.BindView;
 import leu.doan_datdoan.R;
+import leu.doan_datdoan.fragment.khachhang.KhachHang_DonHangFragment;
 import leu.doan_datdoan.fragment.khachhang.ThongTinKhachHangFragment;
 import leu.doan_datdoan.fragment.khachhang.TrangChuKhachHangFragment;
 import leu.doan_datdoan.model.KhachHang;
@@ -61,6 +62,7 @@ public class KhachHangActivity extends AppCompatActivity
     private boolean daTao = true;
     private String username;
     private KhachHang kh;
+    private static final String DONHANG_KHACHHANG_FRAGMEN_TAG = "DONHANG";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -176,6 +178,13 @@ public class KhachHangActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_khachhang_thoat) {
             finish();
+        }else if (id == R.id.nav_khachhang_donhang){
+            KhachHang_DonHangFragment khachHang_donHangFragment = new KhachHang_DonHangFragment();
+            khachHang_donHangFragment.setArguments(b);
+            khachHang_donHangFragment.setActivity(this);
+            manager.beginTransaction()
+                    .replace(R.id.rl_khachhang_nav_for_fragment,khachHang_donHangFragment,DONHANG_KHACHHANG_FRAGMEN_TAG)
+                    .commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout_khachhang);

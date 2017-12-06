@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    card_view:cardBackgroundColor="@android:color/white"
+    card_view:cardElevation="5dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:cardCornerRadius="5dp"
+    card_view:contentPadding="8dp"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/iv1_itemrvdonhang"
+            android:text="Tên cửa hàng: "
+            android:textSize="16sp"
+            android:textColor="#000"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvten_khachhang_item_rvdonhang"
+            android:layout_marginStart="10dp"
+            android:layout_below="@id/iv1_itemrvdonhang"
+            android:textColor="#70000000"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/iv2_itemrvdonhang"
+            android:layout_below="@+id/tvten_khachhang_item_rvdonhang"
+            android:text="Địa chỉ: "
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvdiachi_khachhang_item_rvdonhang"
+            android:layout_below="@+id/iv2_itemrvdonhang"
+            android:text=""
+            android:textColor="#70000000"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/iv3_itemrvdonhang"
+            android:layout_below="@+id/tvdiachi_khachhang_item_rvdonhang"
+            android:text="Tổng tiền hàng: "
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvtienhang_khachhang_item_rvdonhang"
+            android:layout_below="@+id/tvdiachi_khachhang_item_rvdonhang"
+            android:layout_toRightOf="@+id/iv3_itemrvdonhang"
+            android:textColor="#70000000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/iv4_itemrvdonhang"
+            android:layout_below="@+id/iv3_itemrvdonhang"
+            android:text="Tiền ship: "
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvtienship_khachhang_item_rvdonhang"
+            android:layout_below="@+id/tvtienhang_khachhang_item_rvdonhang"
+            android:layout_toRightOf="@+id/iv4_itemrvdonhang"
+            android:textColor="#70000000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/iv5_itemrvdonhang"
+            android:layout_below="@+id/iv4_itemrvdonhang"
+            android:text="Tổng tiền phải trả: "
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvtienphaitra_khachhang_item_rvdonhang"
+            android:layout_below="@+id/tvtienship_khachhang_item_rvdonhang"
+            android:layout_toRightOf="@+id/iv5_itemrvdonhang"
+            android:textColor="#70000000"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btngoicuahang_khachhang_item_rvdonhang"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/ripple_button"
+            android:gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_below="@+id/iv5_itemrvdonhang"
+            android:text="Gọi cửa hàng"
+            android:textColor="#fff"
+            android:padding="5sp"
+            android:textSize="10sp" />
+        <Button
+            android:layout_marginEnd="10dp"
+            android:id="@+id/btngoiship_khachhang_item_rvdonhang"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/ripple_button"
+            android:gravity="center"
+            android:layout_below="@+id/iv5_itemrvdonhang"
+            android:text="Gọi shipper"
+            android:textColor="#fff"
+            android:padding="5sp"
+            android:textSize="10sp" />
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/btngoicuahang_khachhang_item_rvdonhang"
+            android:layout_alignParentEnd="true"
+            android:id="@+id/tvngaydat_khachhang_item_rvdonhang"
+            android:textColor="#000"
+            android:layout_marginEnd="10dp"
+            android:textStyle="italic"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:textStyle="italic"
+            android:id="@+id/tvtrangthai_khachhang_itenrvdonhang"
+            android:layout_below="@+id/tvngaydat_khachhang_item_rvdonhang"
+            android:text="Đang chờ phê duyệt"
+            android:textColor="#2cff02"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

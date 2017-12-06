@@ -13,9 +13,9 @@ import jp.wasabeef.picasso.transformations.BlurTransformation;
 
 public class LoadPicture {
     public static void load(Context context, String picName, ImageView iv){
-        Picasso.with(context).load("http://192.168.0.101:11850/DoAn/picture?name=" + picName).fit().into(iv);
+        Picasso.with(context).load("http://192.168.0.101:14915/DoAn/picture?name=" + picName).fit().into(iv);
     }
     public static void loadBlur(Context context, String picName, ImageView iv){
-        Picasso.with(context).load("http://192.168.0.101:11850/DoAn/picture?name=" + picName).transform(new BlurTransformation(context)).fit().into(iv);
+        Picasso.with(context).load("http://192.168.0.101:14915/DoAn/picture?name=" + picName).transform(new BlurTransformation(context)).fit().into(iv);
     }
 }

@@ -38,7 +38,7 @@ import leu.doan_datdoan.model.DonHang;
 public class CuaHang_PheDuyetFragment extends Fragment implements FragmentLifecycle,CuaHang_RvPheDuyetAdapter.OnItemRvPheDuyetClick{
     private BroadcastReceiver broadcastReceiver;
 
-    public static final String CUAHANG_PHEDUYETBROADCAST = "pheđuyetdonhang";
+    public static final String CUAHANG_PHEDUYETBROADCAST = "pheduyetdonhang";
     @BindView(R.id.rvpheduyet_cuahang_pheduyetfragment)
     RecyclerView recyclerView;
     @BindView(R.id.tvsoluong_cuahang_pheduyetfragment)
@@ -96,6 +96,7 @@ public class CuaHang_PheDuyetFragment extends Fragment implements FragmentLifecy
         ButterKnife.bind(this, v);
 
         adapter = new CuaHang_RvPheDuyetAdapter(donHangs,context);
+        adapter.setOnClickListener(this);
         adapter.setOnClickListener(this);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);

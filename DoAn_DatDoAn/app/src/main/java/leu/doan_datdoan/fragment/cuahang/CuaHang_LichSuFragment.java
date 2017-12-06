@@ -21,7 +21,7 @@ import leu.doan_datdoan.fragment.FragmentLifecycle;
 import leu.doan_datdoan.model.DonHang;
 
 
-public class CuaHang_LichSuFragment extends Fragment implements FragmentLifecycle {
+public class CuaHang_LichSuFragment extends Fragment implements FragmentLifecycle,CuaHang_RvPheDuyetAdapter.OnItemRvPheDuyetClick {
 
     @BindView(R.id.rvlichsu_cuahang_lichsufragment)
     RecyclerView recyclerView;
@@ -51,6 +51,7 @@ public class CuaHang_LichSuFragment extends Fragment implements FragmentLifecycl
         ButterKnife.bind(this, v);
 
         adapter = new CuaHang_RvPheDuyetAdapter(donHangs,context);
+        adapter.setOnClickListener(this);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -63,6 +64,11 @@ public class CuaHang_LichSuFragment extends Fragment implements FragmentLifecycl
 
     @Override
     public void onPauseFragment() {
+
+    }
+
+    @Override
+    public void hienThongTinPheDuyet(int viTri) {
 
     }
 }

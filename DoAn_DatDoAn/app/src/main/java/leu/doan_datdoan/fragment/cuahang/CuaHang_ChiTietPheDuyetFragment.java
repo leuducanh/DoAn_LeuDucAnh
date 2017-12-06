@@ -3,6 +3,7 @@ package leu.doan_datdoan.fragment.cuahang;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -18,9 +19,11 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -109,6 +112,12 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
     @BindView(R.id.rl3_cuahang_chitietpheduyetfragment)
     RelativeLayout rl3;
 
+    private Dialog dialog;
+    private EditText edSdt;
+    private EditText edTien;
+    private Button btnBatDau;
+
+
     GoogleMap map;
     private SupportMapFragment supportMapFragment;
 
@@ -130,12 +139,39 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
 
     private static final int PERMISSIONS_REQUEST_PHONE = 123;
 
+    @OnClick(R.id.btnbatdaugiao_cuahang_chitietpheduyetfragment)
+    public void onClickBatDauGiao(){
+        dialog.show();
+    }
+
+    @OnClick(R.id.btnhoanthanh_cuahang_chitietpheduyetfragment)
+    public void onClickHoanThanhDonHang() {
+        ((CuaHangActivity) activity).showingDialog();
+        donHang.setTrangThai(DONHANG_HOANTHANH);
+        RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(), donHang).enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if (response.isSuccessful()) {
+                    setViewDaXong();
+                    ((CuaHangActivity) activity).dismissingDialog();
+                } else {
+                    ((CuaHangActivity) activity).dismissingDialog();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                ((CuaHangActivity) activity).dismissingDialog();
+            }
+        });
+    }
+
     @OnClick(R.id.ivgoidienvanchuyen_cuahang_chitietpheduyetfragment)
     public void onClickGoiDienVanChuyen() {
         if (ContextCompat.checkSelfPermission(this.getActivity().getApplicationContext(),
                 Manifest.permission.CALL_PHONE)
                 == PackageManager.PERMISSION_GRANTED) {
-            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + donHang.getNguoiVanChuyen().getDienThoai()));
+            Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + donHang.getSdtShip()));
             startActivity(intent);
         } else {
             requestPermissions(
@@ -226,6 +262,14 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
         ButterKnife.bind(this, v);
         EventBus.getDefault().register(this);
 
+        View v1 = LayoutInflater.from(activity).inflate(R.layout.dialog_giaohang,null,false);
+
+        btnBatDau = (Button) v1.findViewById(R.id.btnbatdaugiao_dialoggiaohang);
+        edSdt = (EditText) v1.findViewById(R.id.edsdt_dialoggiaohang);
+        edTien = (EditText) v1.findViewById(R.id.edgia_dialoggiaohang);
+
+        dialog = new Dialog(activity);
+        dialog.setContentView(v1);
         adapter = new CuaHang_RvChiTietPheDuyetAdapter(donHang.getHangDatList(), activity);
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getContext(), LinearLayoutManager.VERTICAL, false);
@@ -260,10 +304,55 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
             }
         });
 
+        btnBatDau.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean flag = true;
+                if(edSdt.getText().equals("")){
+                    flag = false;
+                    edSdt.setError("");
+                }
+                if(edTien.getText().equals("")){
+                    flag = false;
+                    edTien.setError("");
+                }
+
+                donHang.setSdtShip(edSdt.getText().toString());
+                donHang.setGiaVanChuyen(Integer.parseInt(edTien.getText().toString()));
+                donHang.setTrangThai(DONHANG_GIAOHANG);
+                btnGiaoHang.setVisibility(View.GONE);
+
+                if(flag){
+                    RetrofitFactory.getInstance().createService(DonHangService.class).capNhapDonHang(donHang.getId(),donHang).enqueue(new Callback<ResponseBody>() {
+                        @Override
+                        public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                            dialog.dismiss();
+                            if (response.isSuccessful()){
+                                setViewChuanBiShip();
+                                tvSdtVanChuyen.setText(donHang.getSdtShip());
+                            }else{
+                                btnGiaoHang.setVisibility(View.VISIBLE);
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ResponseBody> call, Throwable t) {
+                            btnGiaoHang.setVisibility(View.VISIBLE);
+                            showM("Lỗi");
+                            dialog.dismiss();
+                        }
+                    });
+                }
+            }
+        });
+
         supportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map_cuahang_chitietpheduyetfragment);
         supportMapFragment.getMapAsync(this);
     }
 
+    private void showM(String e) {
+        Toast.makeText(activity,e,Toast.LENGTH_SHORT).show();
+    }
 
     @Subscribe(sticky = true)
     public void onCickChiTietPheduyetMatHang(CuaHang_OnClickChiTietPheDuyetMatHang cuaHang_onClickChiTietPheDuyetMatHang) {
@@ -321,12 +410,15 @@ public class CuaHang_ChiTietPheDuyetFragment extends Fragment implements OnMapRe
 //        btnBatDauGiaoHang.setVisibility(View.VISIBLE);
 //        btnHuyShip.setVisibility(View.VISIBLE);
         rl3.setVisibility(View.VISIBLE);
+        tvSdtVanChuyen.setText(donHang.getSdtShip());
         btnHoanThanh.setVisibility(View.VISIBLE);
+        btnHuyDon.setVisibility(View.VISIBLE);
     }
 
     public void setViewDaXong() {
         setGoneTatCaCacView();
         rl3.setVisibility(View.VISIBLE);
+        tvSdtVanChuyen.setText(donHang.getSdtShip());
     }
 //    public void setViewShipLayHang(){
 //        setGoneTatCaCacView();

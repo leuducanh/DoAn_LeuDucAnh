@@ -15,6 +15,7 @@ import com.google.firebase.messaging.RemoteMessage;
 import leu.doan_datdoan.R;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_ChiTietPheDuyetFragment;
 import leu.doan_datdoan.fragment.cuahang.CuaHang_PheDuyetFragment;
+import leu.doan_datdoan.fragment.khachhang.KhachHang_DonHangFragment;
 
 /**
  * Created by MyPC on 15/10/2017.
@@ -25,6 +26,8 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
     private final String CUAHANG_THEMDONHANG = "themdonhang";
     private final String CUAHANG_PHEDUYET = "pheduyet";
     private final String CUAHANG_HUY = "huypheduyet";
+    private final String CUAHANG_DANGGIAOHANG = "danggiaohang";
+    private final String CUAHANG_DAXONG = "daxong";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -55,6 +58,18 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
             case CUAHANG_HUY:
                 pushNoti("Đơn hàng của bạn đã bị hủy",thongDiep);
 
+                break;
+            case CUAHANG_DANGGIAOHANG:
+                pushNoti("Đơn hàng đang được giao",thongDiep);
+                intent.setAction(KhachHang_DonHangFragment.KHACHHANG_DONHANGBROADCASH);
+                intent.putExtra("donhang",json);
+                sendBroadcast(intent);
+                break;
+            case CUAHANG_DAXONG:
+                pushNoti("Đơn hàng đã hoàn thành",thongDiep);
+                intent.setAction(KhachHang_DonHangFragment.KHACHHANG_DONHANGBROADCASH);
+                intent.putExtra("donhang",json);
+                sendBroadcast(intent);
                 break;
         }
 
